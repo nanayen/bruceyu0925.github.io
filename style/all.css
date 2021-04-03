@@ -626,6 +626,9 @@ a {
 		right: 5vw;
 		bottom: 90px;
 	}
+	.blog-cover{
+		display: none;
+	}
 	.blog-ls {
 		width: 90vw;
 	}
