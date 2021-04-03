@@ -377,6 +377,7 @@ a {
 	position: absolute;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 	z-index: 2;
 	background-color: rgba(0, 0, 0, .5);
 	width: 100%;
