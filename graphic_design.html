@@ -363,18 +363,6 @@
             document.documentElement.style.overflow = 'auto';
             document.body.style.overflow = 'auto';
         })
-
-    </script>
-
-    <script>
-        var anchor = document.querySelector('a[href="#Top"]');
-        var target = document.getElementById('Top');
-        anchor.addEventListener('click', function (e) {
-            if (window.scrollTo) {
-                e.preventDefault();
-                window.scrollTo({ 'behavior': 'smooth', 'top': target.offsetTop });
-            }
-        })
         $('a[href="#Top"]').click(function () {
         $('html,body').animate({scrollTop: 0}, 800, 'swing') });
     </script>
