@@ -4,10 +4,6 @@
 *, *::before, *::after {
 	box-sizing: border-box;
 }
-/* 
-html {
-	scroll-behavior: smooth;
-} */
 
 body {
 	font-family: Helvetica, Arial, "Microsoft JhengHei", sans-serif, "LiHei Pro", "MingLiu";
@@ -475,6 +471,7 @@ a {
 /* JS --------------------------------- */
 
 .js-fadeIn-normal, .js-fadeIn-left, .js-fadeIn-right, .js-fadeIn-top, .js-fadeIn-bottom {
+	pointer-events: none;
 	opacity: 0;
 	transition: all .8s ease;
 	-webkit-transition: all .8s ease;
@@ -484,6 +481,7 @@ a {
 }
 
 .js-fadeIn-left+.base-body, .js-fadeIn-right+.base-body {
+	pointer-events: none;
 	opacity: 0;
 	transition: all .8s ease;
 	-webkit-transition: all .8s ease;
@@ -493,11 +491,13 @@ a {
 }
 
 .js-fadeIn-normal--active, .js-fadeIn-left--active, .js-fadeIn-right--active, .js-fadeIn-top--active, .js-fadeIn-bottom--active {
-	opacity: 1
+	opacity: 1;
+	pointer-events: all;
 }
 
 .js-fadeIn-left--active+.base-body, .js-fadeIn-right--active+.base-body {
-	opacity: 1
+	opacity: 1;
+	pointer-events: all;
 }
 
 .js-fadeIn-left {
