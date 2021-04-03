@@ -375,6 +375,8 @@
                 window.scrollTo({ 'behavior': 'smooth', 'top': target.offsetTop });
             }
         })
+        $('a[href="#Top"]').click(function () {
+        $('html,body').animate({scrollTop: 0}, 800, 'swing') });
     </script>
 
 </body>
