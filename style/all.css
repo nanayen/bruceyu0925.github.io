@@ -331,7 +331,7 @@ a {
 }
 .blog-bigbox{
 	width: 100%;
-	height: 9999%;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
