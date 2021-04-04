@@ -638,7 +638,7 @@ a {
 	}
 	}
 
-@media screen and (max-height: 900px) and (orientation: landscape) {
+@media screen and (max-width: 1024px) and (max-height: 900px) {
 	.header .navi-ls{
 		flex-direction: column;
 		background-color: rgba(27, 27, 27);
@@ -686,7 +686,7 @@ a {
 	}
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (max-height: 1024px) {
 	.header .navi-ls{
 		flex-direction: column;
 		background-color: rgba(27, 27, 27);
