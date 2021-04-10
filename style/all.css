@@ -6,7 +6,7 @@
 }
 
 @font-face {
-	font-family: futura;
+	font-family: futurabruce;
 	src: url(/font/FuturaBold.ttf);
 }
 
@@ -195,7 +195,7 @@ a {
 	background-repeat: no-repeat;
 	align-items: center;
 	max-width: 100%;
-	font-family: "futura";
+	font-family: "futura" "futurabruce";
 	font-weight: 400;
 }
 
