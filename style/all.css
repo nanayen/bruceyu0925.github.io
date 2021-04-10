@@ -4,11 +4,11 @@
 *, *::before, *::after {
 	box-sizing: border-box;
 }
-
+/* 
 @font-face {
-	font-family: futurabruce;
+	font-family: futura;
 	src: url(/font/FuturaBold.ttf);
-}
+} */
 
 body {
 	font-family: Helvetica, Arial, "Microsoft JhengHei", sans-serif, "LiHei Pro", "MingLiu";
@@ -195,7 +195,8 @@ a {
 	background-repeat: no-repeat;
 	align-items: center;
 	max-width: 100%;
-	font-family: "futura" "futurabruce";
+	font-family: "futura";
+	font-weight: 400;
 }
 
 .banr-pag {
