@@ -7,7 +7,7 @@
 
 @font-face {
 	font-family: futura;
-	src: url(/font/FuturaStdBook.ttf);
+	src: url(/font/FuturaBold.ttf);
 }
 
 body {
@@ -196,6 +196,7 @@ a {
 	align-items: center;
 	max-width: 100%;
 	font-family: "futura";
+	font-weight: 400;
 }
 
 .banr-pag {
