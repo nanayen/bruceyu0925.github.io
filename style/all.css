@@ -5,6 +5,11 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+	font-family: futura;
+	src: url(/font/Futura\ Bold.ttf);
+}
+
 body {
 	font-family: Helvetica, Arial, "Microsoft JhengHei", sans-serif, "LiHei Pro", "MingLiu";
 	color: #222;
@@ -190,7 +195,7 @@ a {
 	background-repeat: no-repeat;
 	align-items: center;
 	max-width: 100%;
-	font-family: "futura Helvetica";
+	font-family: "futura";
 }
 
 .banr-pag {
