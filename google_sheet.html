@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="擅長Google表單的動態陣列函數應用，知悉數據與圖表的搭配、呈現，也擅長做出多種類型報表">
+    <meta name="keywords" content="BRUCE YU,BRUCE YU DESIGN,Google Sheet,Google表單,動態陣列函數,數據與圖表">
+    <meta name="Distribution" content="Taiwan">
+    <meta name="author" content="BRUCE YU">
+    <meta name="copyright" content="Copyright 2021 ©Bruce Yu Design 版權所有">
+
+    <meta property="og:title" content="Google表單・BRUCE YU DESIGN">
+    <meta property="og:description" content="擅長Google表單的動態陣列函數應用，知悉數據與圖表的搭配、呈現，也擅長做出多種類型報表">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="favico.svg">
+    <meta property="og:type" content="website">
+
+    <link rel="shortcut icon" href="favico.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="style/Meyerweb.css">
+    <link rel="stylesheet" href="style/all.css">
+
+    <script>
+        function isMobileDevice() {
+            const mobileDevice = ['Android', 'webOS', 'iPhone', 'iPad', 'iPod', 'BlackBerry', 'Windows Phone']
+            let isMobileDevice = mobileDevice.some(e => navigator.userAgent.match(e))
+            return isMobileDevice
+        }
+        if (isMobileDevice() == true) {
+            document.write('<link rel="stylesheet" href="style/mobile_rwd.css">')
+        }
+    </script>
+
+    <title>Bruce Yu Design</title>
+</head>
+
+<body id="Top">
+
+    <!-- Loading -->
+
+    <div id="loading">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </div>
+
+    <!-- 頁首 -->
+
+    <header class="header">
+        <div class="header-head">
+            <a href="index.html">
+                <img class="img-resp" src="image/header_logo_2.svg" alt="Bruce Yu Design" height="65">
+            </a>
+        </div>
+
+        <div class="header-foot">
+            <nav class="navi">
+                <button id="List" class="btn-bars" type="button" alt="開啟選單">
+                    <i class="fas fa-bars"></i>
+                    <span class="hide">開啟選單</span>
+                </button>
+                <ul class="navi-ls">
+                    <li class="navi-li">
+                        <a href="index.html" class="btn-text">首頁</a>
+                    </li>
+                    <li class="navi-li">
+                        <a href="graphic_design.html" class="btn-text">平面設計</a>
+                    </li>
+                    <!-- <li class="navi-li">
+                        <a href="front_end.html" class="btn-text">前端設計</a>
+                    </li> -->
+                    <li class="navi-li">
+                        <a href="google_sheet.html" class="btn-text">Google表單</a>
+                    </li>
+                    <li class="navi-li navi-line">
+                        <a href="https://www.instagram.com/bruceyu_design/" class="btn-icon" target="_blank"
+                            rel="noreferrer noopener" alt="instagram">
+                            <span class="hide">instagram</span>
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="navi-li">
+                        <a href="mailto:bruceyu0925@gmail.com" class="btn-icon" target="_blank"
+                            rel="noreferrer noopener" alt="信箱">
+                            <span class="hide">信箱</span>
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Design -->
+
+    <div class="banr banr-pag banr-sheet">
+        <h2 class="banr-pag-title"><small class="banr-pag-sm">BRUCE YU DESIGN<br></small>Google表單</h2>
+    </div>
+
+    <!-- 內容區 -->
+
+    <div id="Base">
+
+        <div class="base base-two container mx-auto">
+            <div class="base-head js-fadeIn-left">
+                <h3 class="base-title">熟悉動態陣列函數</h3>
+                <p class="base-desc">
+                    在 Google Sheet 中新增了動態陣列函數，僅需在一個儲存格中撰寫，就可自動帶出陣列資料，擁有極高的效率，利於公司內部進行各項統計。
+                </p>
+            </div>
+            <div class="base-body">
+                <img class="img-resp" src="image/Googlesheet1.png" alt="動態陣列函數的應用">
+            </div>
+        </div>
+
+        <div class="base base-two container mx-auto base-flip">
+            <div class="base-head js-fadeIn-right">
+                <h3 class="base-title">數據與圖表的呈現</h3>
+                <p class="base-desc">
+                    統計出來的數據，在第一時間觀看上會較不方便，但與適當的圖表一併使用，並將重要的資訊以重點色呈現，讓主管與高階可一目瞭然。
+                </p>
+            </div>
+            <div class="base-body">
+                <img class="img-resp" src="image//Googlesheet2.png" alt="數據與圖表的呈現">
+            </div>
+        </div>
+
+        <div class="base base-two container mx-auto">
+            <div class="base-head js-fadeIn-left">
+                <h3 class="base-title">其他類型表單呈現</h3>
+                <p class="base-desc">
+                    然而並非所有圖表 Google Sheet 上都有，如日報表、甘特圖等其他類型圖表，但仍可以使用函數以及一些特殊手法去呈現。
+                </p>
+            </div>
+            <div class="base-body">
+                <img class="img-resp" src="image/Googlesheet3.png" alt="各類型表單呈現">
+            </div>
+        </div>
+
+        <div class="base container mx-auto align-c">
+            <div class="base-head js-fadeIn-normal">
+                <h3 class="base-title">開發系統？Google表單？</h3>
+                <p class="base-desc">
+                    並非所有事情，都需要來開發系統，開發系統的時日長、維護不易，且費用不俗。<br class="hide-900">
+                    然而Google表單可快速開發，日後有新需求也可即時增加功能，且最重要的是，也能支援多人同時編輯。
+                </p>
+                <ul class="base-link-ls">
+                    <li class="base-link-li">
+                        <a target="_blank" rel="noreferrer noopener"
+                            href="https://docs.google.com/spreadsheets/d/1ibKrQ6jhPFypPPc-KrfobWd--7tmFMf0OBXpcaEO8cc/edit?usp=sharing"><i
+                                class="fas fa-table"></i> 名單效益表</a>
+                    </li>
+                    <li class="base-link-li">
+                        <a target="_blank" rel="noreferrer noopener"
+                            href="https://docs.google.com/spreadsheets/d/1jl51efPh4x8LTeDXehD3wxx4cl-H__fqzp0N6wR5C6Y/edit?usp=sharing"><i
+                                class="fas fa-table"></i> 部門績效表</a>
+                    </li>
+                    <li class="base-link-li">
+                        <a target="_blank" rel="noreferrer noopener"
+                            href="https://docs.google.com/spreadsheets/d/1RO_qdXhTh-O3vn9iHY0Ux0xaLpV3iHlAMj9sZTZ89K4/edit?usp=sharing"><i
+                                class="fas fa-table"></i> 工作日程表</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="base-body">
+                <ul class="round-ls">
+                    <li class="round-li js-fadeIn-bottom">
+                        <i class="fas fa-clock round-icon"></i>
+                        <span class="round-span">開發快速</span>
+                    </li>
+                    <li class="round-li js-fadeIn-bottom">
+                        <i class="fas fa-wrench round-icon"></i>
+                        <span class="round-span">維護快速</span>
+                    </li>
+                    <li class="round-li js-fadeIn-bottom">
+                        <i class="fas fa-users round-icon"></i>
+                        <span class="round-span">多人作業</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+
+    <a href="#Top" class="btn-top" alt="置頂">
+        <i class="fas fa-angle-up"></i>
+        <p class="hide">置頂</p>
+    </a>
+
+    <footer class="footer pag-footer">
+        <span>Copyright 2021 &copy;<a href="index.html"><u>Bruce Yu Design</u></a> 版權所有</span>
+    </footer>
+
+    <script src="/js/all.js"></script>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/jquery-ajex-1.6.4.js"></script>
+
+    <script>
+
+        $(window).load(function () {
+            $("#loading").delay(350).fadeOut(500);
+        })
+
+        $('#List').click(function () {
+            $('.header .navi-ls').stop(true, true).fadeToggle(500);
+        })
+
+        $('a[href="#Top"]').click(function () {
+            $('html,body').animate({ scrollTop: 0 }, 800, 'swing')
+        });
+    </script>
+
+</body>
+
+</html>
