@@ -724,7 +724,7 @@ a {
 		right: 5vw;
 		bottom: 90px;
 	}
-	.blog-cover {
+	/* .blog-cover {
 		display: none;
 	}
 	.blog-ls {
@@ -733,10 +733,10 @@ a {
 	.blog-li {
 		height: 26vw;
 		width: 26vw;
-	}
+	} */
 }
 
-@media screen and (max-width: 1024px) and (max-height: 900px) {
+/* @media screen and (max-width: 1024px) and (max-height: 900px) {
 	.header .navi-ls {
 		flex-direction: column;
 		background-color: rgba(27, 27, 27);
@@ -779,10 +779,10 @@ a {
 	.btn-bars {
 		display: block;
 	}
-}
+} */
 
-@media screen and (max-width: 900px) and (max-height: 1024px) {
-	.header .navi-ls {
+@media screen and (max-width: 900px) {
+	/* .header .navi-ls {
 		flex-direction: column;
 		background-color: rgba(27, 27, 27);
 		position: fixed;
@@ -823,7 +823,7 @@ a {
 	}
 	.btn-bars {
 		display: block;
-	}
+	} */
 	.banr-home-text {
 		animation-name: FadeOutDown;
 		text-align: center;
