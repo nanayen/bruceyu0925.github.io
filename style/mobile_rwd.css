@@ -68,7 +68,7 @@
 		position: fixed;
 		right: -100vw;
 		top: 90px;
-		width: 450px;
+		width: 40%;
 		height: 100%;
 		display: block;
 		transition-duration: 500ms;
@@ -111,7 +111,7 @@
 		position: fixed;
 		right: -100vw;
 		top: 90px;
-		width: 450px;
+		width: 40%;
 		height: 100%;
 		display: block;
 		transition-duration: 500ms;
