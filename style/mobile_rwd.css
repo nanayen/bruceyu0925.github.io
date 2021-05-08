@@ -1,60 +1,84 @@
-/* 選單隱藏 --------------------------------- */
-@media screen and (max-width:900px){
-	.header .navi-ls {
-		flex-direction: column;
-		background-color: rgba(27, 27, 27);
-		position: fixed;
-		top: 90px;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		display: none;
-	}
-	.header .navi-li {
-		border-top: #292929 1px solid;
-		text-align: center;
-		width: 100%;
-	}
-	.header .navi-li {
-		margin-left: 0;
-		line-height: 1;
-	}
-	.navi-line {
-		border-left: none;
-		padding-left: 0;
-	}
-	.btn-text, .btn-icon {
-		display: block;
-		width: 100vw;
-		line-height: 10vh;
-		font-size: 2.5vh;
-	}
-	.navi-ls::after {
-		content: "Copyright 2021 ©Bruce Yu Design";
-		position: fixed;
-		text-align: center;
-		color: #fff;
-		font-size: 1vh;
-		width: 100%;
-		bottom: 3vh;
-		z-index: 2;
-	}
-	.btn-bars {
-		display: block;
-	}
-	
+/* 選單按鈕動態 --------------------------------- */
+
+#List {
+	display: block;
+	height: 21px;
+	width: 25px;
+	position: relative;
+	cursor: pointer;
 }
 
-@media screen and (max-height:900px){
+#List span {
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 25px;
+	background: #fff;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+	transition: .25s;
+	-ms-transition: .25s;
+	-webkit-transition: .25s;
+	-moz-transition: .25s;
+	-o-transition: .25s;
+}
+
+#List span:nth-child(1) {
+	top: 0px;
+}
+
+#List span:nth-child(2), #List span:nth-child(3) {
+	top: 9px;
+}
+
+#List span:nth-child(4) {
+	top: 18px;
+}
+
+#List.open span:nth-child(1), #List.open span:nth-child(4) {
+	top: 9px;
+	opacity: 0;
+}
+
+#List.open span:nth-child(2) {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+}
+
+#List.open span:nth-child(3) {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+}
+
+/* 選單隱藏 --------------------------------- */
+
+@media screen and (max-width:900px) {
 	.header .navi-ls {
 		flex-direction: column;
 		background-color: rgba(27, 27, 27);
 		position: fixed;
+		right: -100vw;
 		top: 90px;
-		left: 0;
-		width: 100%;
+		width: 450px;
 		height: 100%;
-		display: none;
+		display: block;
+		transition-duration: 500ms;
+	}
+	.header .navi-ls.slide {
+		transform: translate(-100vw);
+		-webkit-transform: translate(-100vw);
+		-moz-transform: translate(-100vw);
+		-ms-transform: translate(-100vw);
+		-o-transform: translate(-100vw);
 	}
 	.header .navi-li {
 		border-top: #292929 1px solid;
@@ -71,28 +95,62 @@
 	}
 	.btn-text, .btn-icon {
 		display: block;
-		width: 100vw;
+		width: 100%;
 		line-height: 10vh;
 		font-size: 2.5vh;
-	}
-	.navi-ls::after {
-		content: "Copyright 2021 ©Bruce Yu Design";
-		position: fixed;
-		text-align: center;
-		color: #fff;
-		font-size: 1vh;
-		width: 100%;
-		bottom: 3vh;
-		z-index: 2;
 	}
 	.btn-bars {
 		display: block;
 	}
-	
+}
+
+@media screen and (max-height:900px) {
+	.header .navi-ls {
+		flex-direction: column;
+		background-color: rgba(27, 27, 27);
+		position: fixed;
+		right: -100vw;
+		top: 90px;
+		width: 450px;
+		height: 100%;
+		display: block;
+		transition-duration: 500ms;
+	}
+	.header .navi-ls.slide {
+		transform: translate(-100vw);
+		-webkit-transform: translate(-100vw);
+		-moz-transform: translate(-100vw);
+		-ms-transform: translate(-100vw);
+		-o-transform: translate(-100vw);
+	}
+	.header .navi-li {
+		border-top: #292929 1px solid;
+		text-align: center;
+		width: 100%;
+	}
+	.header .navi-li {
+		margin-left: 0;
+		line-height: 1;
+	}
+	.navi-line {
+		border-left: none;
+		padding-left: 0;
+	}
+	.btn-text, .btn-icon {
+		display: block;
+		width: 100%;
+		line-height: 10vh;
+		font-size: 2.5vh;
+	}
+	.btn-bars {
+		display: block;
+	}
 }
 
 /* 手機RWD --------------------------------- */
+
 @media screen and (max-width: 900px) {
+	
 	.banr-home-text {
 		animation-name: FadeOutDown;
 		text-align: center;
@@ -116,6 +174,12 @@
 
 @media screen and (max-width: 768px) {
 	.w-80percent {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width:600px) {
+	.header .navi-ls {
 		width: 100%;
 	}
 }
