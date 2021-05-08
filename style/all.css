@@ -160,6 +160,16 @@ a {
 	z-index: 1;
 }
 
+.header-head{
+	position: relative;
+	width: auto;
+}
+
+.header-head .img-resp{
+	position: absolute;
+	left: 0;
+}
+
 .header .navi-ls {
 	display: flex;
 }
