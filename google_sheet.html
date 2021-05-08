@@ -62,10 +62,12 @@
 
         <div class="header-foot">
             <nav class="navi">
-                <button id="List" class="btn-bars" type="button" alt="開啟選單">
-                    <i class="fas fa-bars"></i>
-                    <span class="hide">開啟選單</span>
-                </button>
+                <div id="List" class="btn-bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <ul class="navi-ls">
                     <li class="navi-li">
                         <a href="index.html" class="btn-text">首頁</a>
@@ -210,7 +212,8 @@
         })
 
         $('#List').click(function () {
-            $('.header .navi-ls').stop(true, true).fadeToggle(500);
+            $(this).stop(true, true).toggleClass('open');
+            $('.header .navi-ls').stop(true, true).toggleClass('slide');
         })
 
         $('a[href="#Top"]').click(function () {
