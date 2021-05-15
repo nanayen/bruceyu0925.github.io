@@ -1,7 +1,6 @@
 /* 選單按鈕動態 --------------------------------- */
 
 #List {
-	display: block;
 	height: 21px;
 	width: 25px;
 	position: relative;
@@ -59,9 +58,35 @@
 	-ms-transform: rotate(45deg);
 }
 
+/* 平板RWD --------------------------------- */
+
+@media screen and (max-width: 1024px) {
+	.base-two.base-flip, .base-two {
+		flex-direction: column;
+	}
+	.js-fadeIn-normal, .js-fadeIn-left, .js-fadeIn-right, .js-fadeIn-left+.base-body, .js-fadeIn-right+.base-body {
+		opacity: 1;
+		transform: translate(0);
+		-webkit-transform: translate(0);
+		-moz-transform: translate(0);
+		-ms-transform: translate(0);
+		-o-transform: translate(0);
+	}
+	.base-two .base-body {
+		width: 100%;
+	}
+	.base-two.base-flip .base-head, .base-two .base-head {
+		width: 100%;
+		padding: 0 0 2rem 0;
+	}
+}
+
 /* 選單隱藏 --------------------------------- */
 
 @media screen and (max-width:900px) {
+	#List {
+		display: block;
+	}
 	.header .navi-ls {
 		flex-direction: column;
 		background-color: rgba(27, 27, 27);
@@ -105,6 +130,9 @@
 }
 
 @media screen and (max-height:900px) {
+	#List {
+		display: block;
+	}
 	.header .navi-ls {
 		flex-direction: column;
 		background-color: rgba(27, 27, 27);
@@ -150,7 +178,6 @@
 /* 手機RWD --------------------------------- */
 
 @media screen and (max-width: 900px) {
-	
 	.banr-home-text {
 		animation-name: FadeOutDown;
 		text-align: center;
@@ -176,11 +203,29 @@
 	.w-80percent {
 		width: 100%;
 	}
+	.display-ls{
+		flex-direction: column;
+	}
+	.display-li{
+		margin-left: auto;
+		margin-right: auto;
+		padding: 8vw;
+		width: 80vw;
+	}
+	.display-li+.display-li{
+		margin-top: 2.5rem;
+	}
 }
 
 @media screen and (max-width:600px) {
 	.header .navi-ls {
 		width: 100%;
+	}
+	.display-li{
+		width: 90vw;
+	}
+	.display-li+.display-li{
+		margin-top: 3rem;
 	}
 }
 
