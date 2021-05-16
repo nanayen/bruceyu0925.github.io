@@ -158,11 +158,15 @@
                                 <img src="/image/Graphicdesign/displaypic01_after.jpg" alt="" class="img-resp">
                             </div>
                         </div>
-                            <a class="dis-btn" href="javascript:;">
-                                <i class="fas fa-sync-alt"></i>
-                            </a>
+                        <div class="toggle-border">
+                            <div class="toggle-btn">
+                                <span class="toggle-block toggle-aft toggle-desc">After</span>
+                                <div class="toggle-block toggle-slide"></div>
+                                <span class="toggle-block toggle-bef toggle-desc">Before</span>
+                            </div>
+                        </div>
                         <p class="dis-desc">
-                            懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字
+                            懶得打字懶得打字懶得打字懶得打字懶得打字
                         </p>
                     </div>
                     <div class="display-li js-fadeIn-bottom">
@@ -174,11 +178,15 @@
                                 <img src="/image/Graphicdesign/displaypic02_after.jpg" alt="" class="img-resp">
                             </div>
                         </div>
-                        <a class="dis-btn" href="javascript:;">
-                            <i class="fas fa-sync-alt"></i>
-                        </a>
+                        <div class="toggle-border">
+                            <div class="toggle-btn">
+                                <span class="toggle-block toggle-aft toggle-desc">After</span>
+                                <div class="toggle-block toggle-slide"></div>
+                                <span class="toggle-block toggle-bef toggle-desc">Before</span>
+                            </div>
+                        </div>
                         <p class="dis-desc">
-                            懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字
+                            懶得打字懶得打字懶得打字懶得打字懶得打字
                         </p>
                     </div>
                     <div class="display-li js-fadeIn-bottom">
@@ -190,11 +198,15 @@
                                 <img src="/image/Graphicdesign/displaypic03_after.jpg" alt="" class="img-resp">
                             </div>
                         </div>
-                        <a class="dis-btn" href="javascript:;">
-                            <i class="fas fa-sync-alt"></i>
-                        </a>
+                        <div class="toggle-border">
+                            <div class="toggle-btn">
+                                <span class="toggle-block toggle-aft toggle-desc">After</span>
+                                <div class="toggle-block toggle-slide"></div>
+                                <span class="toggle-block toggle-bef toggle-desc">Before</span>
+                            </div>
+                        </div>
                         <p class="dis-desc">
-                            懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字懶得打字
+                            懶得打字懶得打字懶得打字懶得打字懶得打字
                         </p>
                     </div>
                 </div>
@@ -482,8 +494,9 @@
             document.body.style.overflow = 'auto';
         })
 
-        $('.dis-btn').mousedown(function(){
-            $(this).parent().find('.dis-before').stop(true, true).slideToggle(300);
+        $('.toggle-btn').mousedown(function(){
+            $(this).stop(true, true).toggleClass('toggle-move');
+            $(this).parent().parent().find('.dis-before').stop(true, true).fadeToggle(300);
         })
 
         $('a[href="#Top"]').click(function () {
