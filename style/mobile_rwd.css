@@ -207,11 +207,10 @@
 		flex-direction: column;
 	}
 	.display-li{
-		box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 		margin-left: auto;
 		margin-right: auto;
-		padding: 8vw;
-		width: 80vw;
+		padding: 6vw;
+		width: 70vw;
 	}
 	.display-li+.display-li{
 		margin-top: 2.5rem;
@@ -223,7 +222,7 @@
 		width: 100%;
 	}
 	.display-li{
-		width: 90vw;
+		width: 80vw;
 	}
 	.display-li+.display-li{
 		margin-top: 3rem;
