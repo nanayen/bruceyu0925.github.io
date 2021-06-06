@@ -35,6 +35,7 @@
     </script>
 
     <title>Bruce Yu Design</title>
+
 </head>
 
 <body id="Top">
@@ -136,7 +137,32 @@
                 </p>
             </div>
             <div class="base-body">
-                <img class="img-resp" src="image/Graphicdesign2.png" alt="VIS專題">
+                <div class="switcher">
+                    <div class="switcher-img-ls">
+                        <img class="switcher-img-li switcher-img-cover" src="image/vis_ecoffee/vis_ecoffee_1.jpg"
+                            alt="">
+                        <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_2.jpg" alt="">
+                        <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_3.jpg" alt="">
+                        <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_4.jpg" alt="">
+                        <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_5.jpg" alt="">
+                        <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_6.jpg" alt="">
+                        <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_7.jpg" alt="">
+                        <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_8.jpg" alt="">
+                        <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_9.jpg" alt="">
+                    </div>
+                    <ul class="switcher-btn-ls">
+                        <li class="switcher-btn-li switcher-btn-click"></li>
+                        <li class="switcher-btn-li"></li>
+                        <li class="switcher-btn-li"></li>
+                        <li class="switcher-btn-li"></li>
+                        <li class="switcher-btn-li"></li>
+                        <li class="switcher-btn-li"></li>
+                        <li class="switcher-btn-li"></li>
+                        <li class="switcher-btn-li"></li>
+                        <li class="switcher-btn-li"></li>
+
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -149,7 +175,8 @@
                     <div class="display-li js-fadeIn-bottom">
                         <div class="dis-pic">
                             <div class="dis-before">
-                                <img src="/image/Graphicdesign/displaypic01_before.jpg" alt="煙絲去背以及染色前" class="img-resp">
+                                <img src="/image/Graphicdesign/displaypic01_before.jpg" alt="煙絲去背以及染色前"
+                                    class="img-resp">
                             </div>
                             <div class="dis-after">
                                 <img src="/image/Graphicdesign/displaypic01_after.jpg" alt="煙絲去背以及染色後" class="img-resp">
@@ -169,10 +196,12 @@
                     <div class="display-li js-fadeIn-bottom">
                         <div class="dis-pic">
                             <div class="dis-before">
-                                <img src="/image/Graphicdesign/displaypic02_before.jpg" alt="陰影疊加及紙張材質套用前" class="img-resp">
+                                <img src="/image/Graphicdesign/displaypic02_before.jpg" alt="陰影疊加及紙張材質套用前"
+                                    class="img-resp">
                             </div>
                             <div class="dis-after">
-                                <img src="/image/Graphicdesign/displaypic02_after.jpg" alt="陰影疊加及紙張材質套用後" class="img-resp">
+                                <img src="/image/Graphicdesign/displaypic02_after.jpg" alt="陰影疊加及紙張材質套用後"
+                                    class="img-resp">
                             </div>
                         </div>
                         <div class="toggle-border">
@@ -189,10 +218,12 @@
                     <div class="display-li js-fadeIn-bottom">
                         <div class="dis-pic">
                             <div class="dis-before">
-                                <img src="/image/Graphicdesign/displaypic03_before.jpg" alt="多圖層混合模式的效果前" class="img-resp">
+                                <img src="/image/Graphicdesign/displaypic03_before.jpg" alt="多圖層混合模式的效果前"
+                                    class="img-resp">
                             </div>
                             <div class="dis-after">
-                                <img src="/image/Graphicdesign/displaypic03_after.jpg" alt="多圖層混合模式的效果後" class="img-resp">
+                                <img src="/image/Graphicdesign/displaypic03_after.jpg" alt="多圖層混合模式的效果後"
+                                    class="img-resp">
                             </div>
                         </div>
                         <div class="toggle-border">
@@ -480,6 +511,36 @@
         $('#List').click(function () {
             $(this).stop(true, true).toggleClass('open');
             $('.header .navi-ls').stop(true, true).toggleClass('slide');
+        })
+
+        setInterval(function () {
+            var getpic_src = $('.switcher-img-cover').attr('src');
+            var getpic_num = getpic_src.substr(30, 1)
+            if (getpic_num > $('.switcher-img-li').length - 1) {
+                getpic_num = 0;
+            }
+            console.log(getpic_num)
+            var setpic_num = getpic_num + 1
+            var setpic_src = 'image/vis_ecoffee/vis_ecoffee_' + setpic_num + '.jpg';
+
+            $('.switcher-img-li').removeClass('switcher-img-cover');
+            $('.switcher-img-li').eq(getpic_num).addClass('switcher-img-cover');
+
+            $('.switcher-btn-click').removeClass('switcher-btn-click');
+            $('.switcher-btn-li').eq(getpic_num).addClass('switcher-btn-click');
+        }, 3000);
+
+        $('.switcher-btn-li').mousedown(function () {
+
+            $('.switcher-btn-click').stop(true, true).removeClass('switcher-btn-click');
+            $(this).stop(true, true).addClass('switcher-btn-click');
+
+            var pic_num = $('.switcher-btn-li').index(this) + 1;
+            var pic_src = 'image/vis_ecoffee/vis_ecoffee_' + pic_num + '.jpg';
+
+            $('.switcher-img-li').removeClass('switcher-img-cover');
+            $('.switcher-img-li').eq(pic_num - 1).addClass('switcher-img-cover');
+
         })
 
         $('.blog-li').click(function () {
