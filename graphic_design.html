@@ -138,7 +138,7 @@
             </div>
             <div class="base-body">
                 <div class="switcher">
-                    <div class="switcher-img-ls">
+                    <div class="switcher-img-ls switcher-img-run">
                         <img class="switcher-img-li switcher-img-cover" src="image/vis_ecoffee/vis_ecoffee_1.jpg"
                             alt="">
                         <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_2.jpg" alt="">
@@ -150,7 +150,7 @@
                         <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_8.jpg" alt="">
                         <img class="switcher-img-li" src="image/vis_ecoffee/vis_ecoffee_9.jpg" alt="">
                     </div>
-                    <ul class="switcher-btn-ls">
+                    <ul class="switcher-btn-ls switcher-btn-run">
                         <li class="switcher-btn-li switcher-btn-click"></li>
                         <li class="switcher-btn-li"></li>
                         <li class="switcher-btn-li"></li>
@@ -258,6 +258,14 @@
             </div>
             <div class="base-body">
                 <ul class="blog-ls">
+                    <li class="blog-li js-fadeIn-bottom">
+                        <div class="blog-cover">
+                            <span class="blog-desc">LOW POLY</span>
+                        </div>
+                        <div class="blog-img">
+                            <img src="/image/poster/poster_033.jpg" alt="LOW POLY" class="img-resp">
+                        </div>
+                    </li>
                     <li class="blog-li js-fadeIn-bottom">
                         <div class="blog-cover">
                             <span class="blog-desc">SWIRL</span>
@@ -536,15 +544,18 @@
 
     <script>
 
+        // Loading畫面
         $(window).load(function () {
             $("#loading").delay(350).fadeOut(500);
         })
 
+        // 手機版List清單
         $('#List').click(function () {
             $(this).stop(true, true).toggleClass('open');
             $('.header .navi-ls').stop(true, true).toggleClass('slide');
         })
 
+        // 輪播功能
         setInterval(function () {
             var getpic_src = $('.switcher-img-cover').attr('src');
             var getpic_num = getpic_src.substr(30, 1)
@@ -555,12 +566,25 @@
             var setpic_num = getpic_num + 1
             var setpic_src = 'image/vis_ecoffee/vis_ecoffee_' + setpic_num + '.jpg';
 
-            $('.switcher-img-li').removeClass('switcher-img-cover');
-            $('.switcher-img-li').eq(getpic_num).addClass('switcher-img-cover');
+            var Img = $('.switcher-img-run').find('.switcher-img-li');
+            var Btn = $('.switcher-btn-run').find('.switcher-btn-li');
 
-            $('.switcher-btn-click').removeClass('switcher-btn-click');
-            $('.switcher-btn-li').eq(getpic_num).addClass('switcher-btn-click');
-        }, 3000);
+            Img.removeClass('switcher-img-cover');
+            Img.eq(getpic_num).addClass('switcher-img-cover');
+
+            $('.switcher-btn-run').find('.switcher-btn-click').removeClass('switcher-btn-click');
+            Btn.eq(getpic_num).addClass('switcher-btn-click');
+        }, 3000)
+
+        $('.switcher').mouseenter(function () {
+            $('.switcher-img-ls').removeClass('switcher-img-run');
+            $('.switcher-btn-ls').removeClass('switcher-btn-run');
+        })
+
+        $('.switcher').mouseleave(function () {
+            $('.switcher-img-ls').addClass('switcher-img-run');
+            $('.switcher-btn-ls').addClass('switcher-btn-run');
+        })
 
         $('.switcher-btn-li').mousedown(function () {
 
@@ -575,6 +599,7 @@
 
         })
 
+        // Blog圖片放大
         $('.blog-li').click(function () {
             $('.blog-big').stop(true, true).fadeIn(300);
 
@@ -592,11 +617,13 @@
             document.body.style.overflow = 'auto';
         })
 
+        // PS前後比較功能
         $('.toggle-btn').mousedown(function () {
             $(this).stop(true, true).toggleClass('toggle-move');
             $(this).parent().parent().find('.dis-before').stop(true, true).fadeToggle(300);
         })
 
+        // 置頂按鈕
         $('a[href="#Top"]').click(function () {
             $('html,body').animate({ scrollTop: 0 }, 800, 'swing')
         });
