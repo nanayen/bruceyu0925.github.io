@@ -1,6 +1,12 @@
 @charset "utf-8";
 /* Base --------------------------------- */
 
+:root{
+	--major:#6884d1;
+	--minor:#6db4ff;
+	--title:#004e92;
+}
+
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -41,7 +47,7 @@ a {
 }
 
 .btn-bars:hover, .header a:hover, footer a:hover {
-	color: rgb(109, 180, 255)
+	color: var(--minor);
 }
 
 .header, .footer {
@@ -83,7 +89,7 @@ a {
 	height: 100%;
 	left: 0;
 	top: 0;
-	background-color: #5278e0;
+	background-color: var(--major);
 	z-index: 6
 }
 
@@ -247,7 +253,7 @@ a {
 }
 
 .banr-home-title {
-	color: rgb(109, 180, 255)
+	color: var(--minor)
 }
 
 .banr-home-desc {
@@ -268,7 +274,7 @@ a {
 
 .banr-pag-sm {
 	font-size: 2.5vw;
-	color: rgb(109, 180, 255);
+	color: var(--minor);
 }
 
 @keyframes FadeOutDown {
@@ -313,7 +319,7 @@ a {
 	margin-bottom: 2rem;
 	text-align: center;
 	font-weight: 400;
-	color: #004e92;
+	color: var(--title);
 }
 
 .base-link-ls {
@@ -324,7 +330,8 @@ a {
 }
 
 .base-link-li a {
-	background-color: rgba(82, 120, 224, .88);
+	background-color: var(--major);
+	opacity: .88;
 	margin: 1rem;
 	padding: .8rem;
 	color: #fff;
@@ -336,7 +343,7 @@ a {
 }
 
 .base-link-li a:hover {
-	background-color: rgba(82, 120, 224, 1);
+	opacity: 1;
 }
 
 .w-80percent {
@@ -427,7 +434,7 @@ a {
 }
 
 .switcher-btn-click {
-	background-color: rgb(82, 120, 224);
+	background-color: var(--major);
 }
 
 /* Display --------------------------------- */
@@ -531,7 +538,7 @@ a {
 .toggle-slide {
 	border-radius: 50%;
 	width: 30px;
-	background-color: rgb(82, 120, 224);
+	background-color: var(--major);
 	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -562,18 +569,18 @@ a {
 	-o-border-radius: 50%;
 	background-color: #efefef;
 	box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+	color: var(--major);
 }
 
 .round-span {
 	margin-top: 20px;
 	font-size: 20px;
 	font-weight: 600;
-	color: rgb(43, 120, 202);
 }
 
 .round-icon {
 	font-size: 50px;
-	color: rgba(43, 120, 202, .5);
+	opacity: .8;
 }
 
 /* Blog --------------------------------- */
@@ -651,7 +658,7 @@ a {
 }
 
 .blog-desc {
-	font-family: "futura";
+	font-family: "futura", "futura2";
 	color: #fff;
 	font-size: 1.8vw;
 }
@@ -688,7 +695,8 @@ a {
 	bottom: 90px;
 	font-size: 30px;
 	color: #fafafa;
-	background-color: rgba(82, 120, 224, .8);
+	background-color: var(--major);
+	opacity: .8;
 	height: 70px;
 	width: 70px;
 	display: flex;
@@ -703,7 +711,7 @@ a {
 }
 
 .btn-top:hover {
-	background-color: rgba(82, 120, 224, .88);
+	opacity: .9;
 }
 
 .footer {
