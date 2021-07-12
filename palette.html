@@ -120,8 +120,7 @@
 
         <div class="setcolor" id="Major" style="background-color: var(--major);">
 
-            <input type="text" id="MajorColor" class="color-text" maxlength="7"
-                onkeyup="value=value.replace(/[G-Zg-z\W]/,'') ">
+            <span id="MajorColor" class="color-text"></span>
             <div class="picker">
                 <i class="fas fa-sliders-h color-btn"></i>
                 <div class="picker-position">
@@ -135,8 +134,7 @@
 
         <div class="setcolor" id="Minor" style="background-color: var(--minor);">
 
-            <input type="text" id="MinorColor" class="color-text" maxlength="7"
-                onkeyup="value=value.replace(/[G-Zg-z\W]/,'') ">
+            <span id="MinorColor" class="color-text"></span>
             <div class="picker">
                 <i class="fas fa-sliders-h color-btn"></i>
                 <div class="picker-position">
@@ -149,8 +147,7 @@
 
         <div class="setcolor" id="Title" style="background-color: var(--title);">
 
-            <input type="text" id="TitleColor" class="color-text" maxlength="7"
-                onkeyup="value=value.replace(/[G-Zg-z\W]/,'') ">
+            <span id="TitleColor" class="color-text"></span>
             <div class="picker">
                 <i class="fas fa-sliders-h color-btn"></i>
                 <div class="picker-position">
@@ -188,8 +185,14 @@
             .color-text {
                 color: #eee;
                 font-size: 2rem;
-                opacity: .7;
                 transition-duration: 300ms;
+            }
+
+            .color-text {
+                opacity: .85;
+            }
+            .color-btn {
+                opacity: .7;
             }
 
             .color-btn.--dark,
@@ -197,8 +200,7 @@
                 color: #111;
             }
 
-            .color-btn:hover,
-            .color-text:hover {
+            .color-btn:hover {
                 opacity: 1;
             }
 
@@ -284,52 +286,49 @@
             });
 
             // 取得調色盤值
-            function ChangeColor() {
-
+            MajorPicker.on(['color:init', 'color:change'], function () {
                 var Major = MajorPicker.color.hexString;
-                $('#MajorColor').val(Major);
+                $('#MajorColor').text(Major);
                 document.documentElement.style.setProperty('--major', Major);
 
                 var MajorVal = MajorPicker.color.value;
-                if(MajorVal>50){
+                if (MajorVal > 50) {
                     $('#Major').find('.color-btn').addClass('--dark');
                     $('#Major').find('.color-text').addClass('--dark');
-                }else{
+                } else {
                     $('#Major').find('.color-btn').removeClass('--dark');
                     $('#Major').find('.color-text').removeClass('--dark');
                 }
+            });
 
+            MinorPicker.on(['color:init', 'color:change'], function () {
                 var Minor = MinorPicker.color.hexString;
-                $('#MinorColor').val(Minor);
+                $('#MinorColor').text(Minor);
                 document.documentElement.style.setProperty('--minor', Minor);
 
                 var MinorVal = MinorPicker.color.value;
-                if(MinorVal>50){
+                if (MinorVal > 50) {
                     $('#Minor').find('.color-btn').addClass('--dark');
                     $('#Minor').find('.color-text').addClass('--dark');
-                }else{
+                } else {
                     $('#Minor').find('.color-btn').removeClass('--dark');
                     $('#Minor').find('.color-text').removeClass('--dark');
                 }
+            });
 
+            TitlePicker.on(['color:init', 'color:change'], function () {
                 var Title = TitlePicker.color.hexString;
-                $('#TitleColor').val(Title);
+                $('#TitleColor').text(Title);
                 document.documentElement.style.setProperty('--title', Title);
                 var TitleVal = TitlePicker.color.value;
-                if(TitleVal>50){
+                if (TitleVal > 50) {
                     $('#Title').find('.color-btn').addClass('--dark');
                     $('#Title').find('.color-text').addClass('--dark');
-                }else{
+                } else {
                     $('#Title').find('.color-btn').removeClass('--dark');
                     $('#Title').find('.color-text').removeClass('--dark');
                 }
-
-            }
-
-            // 觸發條件
-            $(window).load(ChangeColor)
-            $('.setcolor').mousemove(ChangeColor)
-            $('.setcolor').click(ChangeColor)
+            });
 
         </script>
 
