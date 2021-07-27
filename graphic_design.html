@@ -76,9 +76,9 @@
                     <li class="navi-li">
                         <a href="graphic_design.html" class="btn-text">平面設計</a>
                     </li>
-                    <!-- <li class="navi-li">
+                    <li class="navi-li">
                         <a href="front_end.html" class="btn-text">前端設計</a>
-                    </li> -->
+                    </li>
                     <li class="navi-li">
                         <a href="google_sheet.html" class="btn-text">Google表單</a>
                     </li>
@@ -184,9 +184,7 @@
                         </div>
                         <div class="toggle-border">
                             <div class="toggle-btn">
-                                <span class="toggle-block toggle-aft toggle-desc">After</span>
-                                <div class="toggle-block toggle-slide"></div>
-                                <span class="toggle-block toggle-bef toggle-desc">Before</span>
+                                <span class="toggle-slide"></span>
                             </div>
                         </div>
                         <p class="dis-desc">
@@ -206,9 +204,7 @@
                         </div>
                         <div class="toggle-border">
                             <div class="toggle-btn">
-                                <span class="toggle-block toggle-aft toggle-desc">After</span>
-                                <div class="toggle-block toggle-slide"></div>
-                                <span class="toggle-block toggle-bef toggle-desc">Before</span>
+                                <span class="toggle-slide"></span>
                             </div>
                         </div>
                         <p class="dis-desc">
@@ -228,9 +224,7 @@
                         </div>
                         <div class="toggle-border">
                             <div class="toggle-btn">
-                                <span class="toggle-block toggle-aft toggle-desc">After</span>
-                                <div class="toggle-block toggle-slide"></div>
-                                <span class="toggle-block toggle-bef toggle-desc">Before</span>
+                                <span class="toggle-slide"></span>
                             </div>
                         </div>
                         <p class="dis-desc">
@@ -240,7 +234,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="base container mx-auto align-c">
             <div class="base-head js-fadeIn-normal">
                 <h3 class="base-title">365張海報挑戰</h3>
@@ -562,7 +556,6 @@
             if (getpic_num > $('.switcher-img-li').length - 1) {
                 getpic_num = 0;
             }
-            console.log(getpic_num)
             var setpic_num = getpic_num + 1
             var setpic_src = 'image/vis_ecoffee/vis_ecoffee_' + setpic_num + '.jpg';
 

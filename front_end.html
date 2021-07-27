@@ -33,6 +33,19 @@
 </head>
 
 <body id="Top">
+
+    <!-- Loading -->
+
+    <div id="loading">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </div>
+
     <!-- 頁首 -->
 
     <header class="header">
@@ -80,7 +93,7 @@
 
     <!-- Banner Design -->
 
-    <div class="banr banr-pag">
+    <div class="banr banr-pag banr-front">
         <h2 class="banr-pag-title"><small class="banr-pag-sm">BRUCE YU DESIGN<br></small>前端設計</h2>
     </div>
 
@@ -92,11 +105,83 @@
             <p class="base-desc">
                 可隨著顯示器的大小，去調整網頁的排版效果。
                 <br class="hide-768">
-                從桌機寬螢幕、平板的畫面，最小至手機版面，皆可做調整。                
+                從桌機寬螢幕、平板的畫面，最小至手機版面，皆可做調整。
             </p>
         </div>
         <div class="base-body js-fadeIn-normal align-c">
             <img class="img-resp w-80percent" src="image/Frontend1.png" alt="響應式設計">
+        </div>
+    </div>
+
+    <div class="base base-two container mx-auto">
+        <div class="base-head js-fadeIn-left">
+            <h3 class="base-title">調色功能</h3>
+            <p class="base-desc">
+                本網站使用CSS的root變數功能，以及引用外部API，以便管理網站色彩，以及特殊的網頁變色效果。
+            </p>
+            <div class="base-link-ls">
+                <div class="base-link-li">
+                    <a target="_blank" href="https://iro.js.org/" rel="noreferrer noopener" alt="iro.js">
+                        串接API：iro.js
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="base-body">
+            <div class="color mx-auto">
+                <ul class="color-ls">
+                    <li id="Major" class="color-li --click">
+                        <span class="color-icon" style="background-color: var(--major)"></span>
+                        <span class="color-desc">Major</span>
+                    </li>
+                    <li id="Minor" class="color-li">
+                        <span class="color-icon" style="background-color: var(--minor)"></span>
+                        <span class="color-desc">Minor</span>
+                    </li>
+                    <li id="Title" class="color-li">
+                        <span class="color-icon" style="background-color: var(--title)"></span>
+                        <span class="color-desc">Title</span>
+                    </li>
+                </ul>
+                <div class="color-block">
+                    <div id="Dis-Major" class="color-dis --click" style="background-color: var(--major)">
+                        <span class="color-text"></span>
+                        <div class="color-picker">
+                            <i class="color-picker-btn fas fa-sliders-h"></i>
+                            <div class="color-picker-position">
+                                <div class="color-picker-border">
+                                    <div id="Picker-Major" class="color-picker-change"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <span id="Reset-Major" class="color-reset">reset</span>
+                    </div>
+                    <div id="Dis-Minor" class="color-dis" style="background-color: var(--minor)">
+                        <span class="color-text"></span>
+                        <div class="color-picker">
+                            <i class="color-picker-btn fas fa-sliders-h"></i>
+                            <div class="color-picker-position">
+                                <div class="color-picker-border">
+                                    <div id="Picker-Minor" class="color-picker-change"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <span id="Reset-Minor" class="color-reset">reset</span>
+                    </div>
+                    <div id="Dis-Title" class="color-dis" style="background-color: var(--title)">
+                        <span class="color-text"></span>
+                        <div class="color-picker">
+                            <i class="color-picker-btn fas fa-sliders-h"></i>
+                            <div class="color-picker-position">
+                                <div class="color-picker-border">
+                                    <div id="Picker-Title" class="color-picker-change"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <span id="Reset-Title" class="color-reset">reset</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -112,14 +197,115 @@
 
     <script src="/js/all.js"></script>
     <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/jquery-ajex-1.6.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
 
     <script>
+
+        // Loading畫面
+        $(window).load(function () {
+            $("#loading").delay(350).fadeOut(500);
+        })
+
+        // 手機版List清單
         $('#List').click(function () {
             $(this).stop(true, true).toggleClass('open');
             $('.header .navi-ls').stop(true, true).toggleClass('slide');
         })
-    </script>
 
+        // 建立調色盤
+        var MajorColor = $('#Dis-Major').css('background-color');
+        var MajorPicker = new iro.ColorPicker('#Picker-Major', {
+            width: 140,
+            color: MajorColor
+        });
+
+        var MinorColor = $('#Dis-Minor').css('background-color');
+        var MinorPicker = new iro.ColorPicker('#Picker-Minor', {
+            width: 140,
+            color: MinorColor
+        });
+
+        var TitleColor = $('#Dis-Title').css('background-color');
+        var TitlePicker = new iro.ColorPicker('#Picker-Title', {
+            width: 140,
+            color: TitleColor
+        });
+
+        // 切換類別
+        $('.color-li').click(function () {
+            $('.color-li.--click').removeClass('--click');
+            $(this).addClass('--click');
+
+            var Dis = '#Dis-' + $(this).attr('id');
+            $('.color-dis.--click').removeClass('--click');
+            $(Dis).addClass('--click');
+
+            $('.color-picker-border.--click').toggleClass('--click')
+        })
+
+        // 開啟調色盤
+        $('.color-picker-btn').click(function () {
+            $(this).parent().find('.color-picker-border').toggleClass('--click')
+        })
+
+        // 使用調色盤
+        MajorPicker.on(['color:init', 'color:change'], function () {
+            var Major = MajorPicker.color.hexString;
+            $('#Dis-Major').find('.color-text').text(Major);
+            document.documentElement.style.setProperty('--major', Major);
+
+            var MajorVal = MajorPicker.color.value;
+            if (MajorVal > 60) {
+                $('#Dis-Major').addClass('--dark');
+            } else {
+                $('#Dis-Major').removeClass('--dark');
+            }
+        });
+
+        MinorPicker.on(['color:init', 'color:change'], function () {
+            var Minor = MinorPicker.color.hexString;
+            $('#Dis-Minor').find('.color-text').text(Minor);
+            document.documentElement.style.setProperty('--minor', Minor);
+
+            var MinorVal = MinorPicker.color.value;
+            if (MinorVal > 60) {
+                $('#Dis-Minor').addClass('--dark');
+            } else {
+                $('#Dis-Minor').removeClass('--dark');
+            }
+        });
+
+        TitlePicker.on(['color:init', 'color:change'], function () {
+            var Title = TitlePicker.color.hexString;
+            $('#Dis-Title').find('.color-text').text(Title);
+            document.documentElement.style.setProperty('--title', Title);
+
+            var TitleVal = TitlePicker.color.value;
+            if (TitleVal > 60) {
+                $('#Dis-Title').addClass('--dark');
+            } else {
+                $('#Dis-Title').removeClass('--dark');
+            }
+        });
+
+        // 顏色重設
+        $('#Reset-Major').click(function () {
+            document.documentElement.style.setProperty('--major', "#4398D9");
+            $(this).parent().find('.color-text').text("#4398D9");
+            MajorPicker.color.hexString = "#4398D9";
+        })
+        $('#Reset-Minor').click(function () {
+            document.documentElement.style.setProperty('--minor', "#2EC0FF");
+            $(this).parent().find('.color-text').text("#2EC0FF");
+            MinorPicker.color.hexString = "#2EC0FF";
+        })
+        $('#Reset-Title').click(function () {
+            document.documentElement.style.setProperty('--title', "#1C6392");
+            $(this).parent().find('.color-text').text("#1C6392");
+            TitlePicker.color.hexString = "#1C6392";
+        })
+    </script>
 </body>
 
 </html>
