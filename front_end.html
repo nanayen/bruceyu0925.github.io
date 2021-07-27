@@ -305,6 +305,12 @@
             $(this).parent().find('.color-text').text("#1C6392");
             TitlePicker.color.hexString = "#1C6392";
         })
+
+        // 置頂按鈕
+        $('a[href="#Top"]').click(function () {
+            $('html,body').animate({ scrollTop: 0 }, 800, 'swing')
+        });
+
     </script>
 </body>
 
