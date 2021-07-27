@@ -72,11 +72,9 @@
 		-ms-transform: translate(0);
 		-o-transform: translate(0);
 	}
-	
-	.js-fadeIn-bottom{
+	.js-fadeIn-bottom {
 		transform: translate(0);
 	}
-
 	.base-two .base-body {
 		width: 100%;
 	}
@@ -108,6 +106,11 @@
 	}
 	.switcher-btn-click {
 		background-color: rgb(82, 120, 224);
+	}
+	.color {
+		margin-top: 30px;
+		width: 70vw;
+		height: 50vw;
 	}
 }
 
@@ -245,6 +248,9 @@
 	.display-li+.display-li {
 		margin-top: 2.5rem;
 	}
+	.hide-768{
+		display: none;
+	}
 }
 
 @media screen and (max-width:600px) {
@@ -256,6 +262,13 @@
 	}
 	.display-li+.display-li {
 		margin-top: 3rem;
+	}
+	.color {
+		width: 90vw;
+		height: 90vw;
+	}
+	.color-desc {
+		font-size: 14px;
 	}
 }
 
