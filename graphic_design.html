@@ -254,6 +254,14 @@
                 <ul class="blog-ls">
                     <li class="blog-li js-fadeIn-bottom">
                         <div class="blog-cover">
+                            <span class="blog-desc">PRETEND</span>
+                        </div>
+                        <div class="blog-img">
+                            <img src="/image/poster/poster_034.jpg" alt="PRETEND" class="img-resp">
+                        </div>
+                    </li>
+                    <li class="blog-li js-fadeIn-bottom">
+                        <div class="blog-cover">
                             <span class="blog-desc">LOW POLY</span>
                         </div>
                         <div class="blog-img">
@@ -611,9 +619,9 @@
         })
 
         // PS前後比較功能
-        $('.toggle-btn').mousedown(function () {
-            $(this).stop(true, true).toggleClass('toggle-move');
-            $(this).parent().parent().find('.dis-before').stop(true, true).fadeToggle(300);
+        $('.toggle-border').mousedown(function () {
+            $(this).find('.toggle-btn').stop(true, true).toggleClass('toggle-move');
+            $(this).parent().find('.dis-before').stop(true, true).fadeToggle(300);
         })
 
         // 置頂按鈕
