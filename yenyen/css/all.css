@@ -7,9 +7,15 @@
     src: url(/yenyen/font/NotoSerifCJKtc-Light.otf);
 }
 
+@font-face {
+    font-family: number;
+    src: url(/yenyen/font/Herculanum-Regular.ttf);
+    unicode-range: U+0030-0039
+}
+
 body {
     background-color: #eee;
-    font-family: serif , "serif-light";
+    font-family: "number" , serif , "serif-light";
     display: flex;
     position: relative;
     align-items: center;
