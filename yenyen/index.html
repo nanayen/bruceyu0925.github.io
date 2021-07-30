@@ -29,7 +29,7 @@
     </div>
     <div class="setbox">
         <a class="bruce" href="https://bruceyu0925.github.io/index.html" target="_blank">
-            <img src="/yenyen/image/BruceYuDesign.svg" alt="BruceYuDesign" width="220">
+            <img src="/image/BruceYuDesign.svg" alt="BruceYuDesign" width="220">
         </a>
         <h1 class="title">日程表製作</h1>
         <div class="block">
@@ -39,6 +39,13 @@
         <div class="block">
             <button class="input btn" id="Clear-All">清除全部文字</button>
             <button class="input btn" id="btnSave" class="btn btn-danger" onclick="screenshot()">下載圖片</button>
+        </div>
+        <div class="block">
+            <textarea id="Textbox"></textarea>
+        </div>
+        <div class="block">
+            <button class="btn input" id="Delete">清　除</button>
+            <button class="btn input" id="Change">確　定</button>
         </div>
     </div>
     <div class="check">
@@ -67,269 +74,191 @@
             <ul class="date-week">
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
+
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
             </ul>
             <ul class="date-week">
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
+
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
             </ul>
             <ul class="date-week">
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
+
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
             </ul>
             <ul class="date-week">
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
+
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
             </ul>
             <ul class="date-week">
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
+
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
             </ul>
             <ul class="date-week">
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
+
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
                 <li class="date-li">
                     <span class="date-num"></span>
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
-                    <input type="text" class="date-text">
+                    <span class="date-text"></span>
                 </li>
             </ul>
         </ul>
-        <img class="date-logo" src="/yenyen/image/logo.png" height="70" alt="YenYenLOGO">
+        <img class="date-logo" src="/image/logo.png" height="70" alt="YenYenLOGO">
     </div>
 </body>
 
