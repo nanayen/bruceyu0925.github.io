@@ -9,7 +9,7 @@
 
 body {
     background-color: #eee;
-    font-family: serif "serif-light";
+    font-family: serif , "serif-light";
     display: flex;
     position: relative;
     align-items: center;
