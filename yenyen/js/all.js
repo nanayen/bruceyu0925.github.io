@@ -28,6 +28,22 @@ $('#Clear-All').click(function () {
         document.body.style.overflow = 'hidden';
 })
 
+$('.date-li').click(function(){
+    $(this).toggleClass('--choose');
+})
+
+$('#Delete').click(function(){
+    $('.date').find('.--choose').find('.date-text').text('');
+    $('.--choose').removeClass('--choose');
+})
+
+$('#Change').click(function(){
+    var Text = $('#Textbox').val();
+    $('.date').find('.--choose').find('.date-text').text(Text);
+    $('.--choose').removeClass('--choose');
+    $('#Textbox').val('');
+})
+
 $('#No').click(function () {
     $('.check').fadeOut(300);
     document.documentElement.style.overflow = 'auto';
@@ -35,7 +51,8 @@ $('#No').click(function () {
 })
 
 $('#Yes').click(function(){
-    $('.date-text').val('')
+    $('.date-text').text('');
+    $('.--choose').removeClass('--choose');
     $('.check').fadeOut(300);
     document.documentElement.style.overflow = 'auto';
         document.body.style.overflow = 'auto';
