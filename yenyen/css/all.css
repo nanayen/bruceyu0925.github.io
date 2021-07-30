@@ -2,9 +2,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: serif-light;
+    src: url(/yenyen/font/NotoSerifCJKtc-Light.otf);
+}
+
 body {
     background-color: #eee;
-    font-family: serif;
+    font-family: serif "serif-light";
     display: flex;
     position: relative;
     align-items: center;
