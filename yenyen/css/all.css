@@ -76,10 +76,16 @@ body {
 .date-li {
     background-color: rgba(255, 255, 255, 0);
     height: 85px;
+    z-index: 2;
 }
 
 .date-li.--show {
     background-color: rgba(255, 255, 255, .45);
+    cursor: pointer;
+}
+
+.date-li.--choose{
+    background-color: rgba(255, 255, 255, .75);
 }
 
 .date-num {
@@ -103,6 +109,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: transparent;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 20px;
 }
 
 .date-logo {
@@ -115,6 +124,7 @@ body {
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
+    z-index: 1;
 }
 
 canvas {
@@ -181,6 +191,35 @@ canvas {
     padding: 6px;
 }
 
+#Textbox{
+    border: 2px solid var(--major);
+    width: 200px;
+    height: 60px;
+    resize : none;
+    outline: none;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    font-size: 16px;
+    margin: 10px 5px;
+    opacity: .8;
+    transition: 300ms;
+    margin-top: 40px;
+}
+
+#textbox:hover{
+    opacity: 1;
+}
+
+#Delete {
+    background-color: transparent;
+    border: 2px solid var(--major);
+    color: var(--major);
+    padding: 6px;
+}
+
 /* 確認訊息 */
 
 .check {
@@ -188,7 +227,7 @@ canvas {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 2;
+    z-index: 3;
     display: none;
 }
 
@@ -237,7 +276,7 @@ canvas {
     width: 100%;
     position: fixed;
     background-color: rgba(0, 0, 0, .85);
-    z-index: 3;
+    z-index: 4;
     color: #fff;
     text-align: center;
     line-height: 100vh;
