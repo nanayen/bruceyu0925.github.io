@@ -4,18 +4,17 @@
 
 @font-face {
     font-family: serif-light;
-    src: url(/yenyen/font/NotoSerifCJKtc-Light.otf);
+    src: url(/font/NotoSerifCJKtc-Light.otf);
 }
 
 @font-face {
     font-family: number;
-    src: url(/yenyen/font/Herculanum-Regular.ttf);
-    unicode-range: U+0030-0039
+    src: url(/font/AkayaTelivigala-Regular.ttf);
 }
 
 body {
     background-color: #eee;
-    font-family: "number" , serif , "serif-light";
+    font-family: "number", "serif-light";
     display: flex;
     position: relative;
     align-items: center;
@@ -39,11 +38,26 @@ body {
 }
 
 .date-title {
-    font-size: 44px;
-    height: 44px;
-    font-weight: 600;
+    line-height: 44px;
     color: #fff;
     margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.date-title p + p {
+    margin-left:10px;
+}
+
+.title-desc{
+    font-weight: 600;
+    font-size: 44px;
+}
+
+#Year,
+#Month {
+    line-height: 35px;
+    font-size: 40px;
 }
 
 .divider {
@@ -96,7 +110,7 @@ body {
     cursor: pointer;
 }
 
-.date-li.--choose{
+.date-li.--choose {
     background-color: rgba(255, 255, 255, .75);
 }
 
@@ -203,11 +217,11 @@ canvas {
     padding: 6px;
 }
 
-#Textbox{
+#Textbox {
     border: 2px solid var(--major);
     width: 200px;
     height: 60px;
-    resize : none;
+    resize: none;
     outline: none;
     border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -221,7 +235,7 @@ canvas {
     margin-top: 40px;
 }
 
-#textbox:hover{
+#textbox:hover {
     opacity: 1;
 }
 
@@ -320,7 +334,7 @@ canvas {
 }
 
 @media screen and (max-width: 414px) {
-    body{
+    body {
         display: block;
     }
 }
