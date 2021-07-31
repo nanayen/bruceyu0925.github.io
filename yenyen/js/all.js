@@ -6,7 +6,8 @@ function Getdays() {
     var DateY = DateYM.substr(0, 4);
     var DateM = DateYM.substr(-2, 2);
 
-    $('.date-title').text(DateY + '年' + DateM + '月')
+    $('#Year').text(DateY);
+    $('#Month').text(DateM)
 
     var DateDays = new Date(DateY, DateM, 0);
     var GetDays = DateDays.getDate();
@@ -25,19 +26,19 @@ $('#Setdate-Apply').click(Getdays)
 $('#Clear-All').click(function () {
     $('.check').fadeIn(300);
     document.documentElement.style.overflow = 'hidden';
-        document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
 })
 
-$('.date-li').click(function(){
+$('.date-li').click(function () {
     $(this).toggleClass('--choose');
 })
 
-$('#Delete').click(function(){
+$('#Delete').click(function () {
     $('.date').find('.--choose').find('.date-text').text('');
     $('.--choose').removeClass('--choose');
 })
 
-$('#Change').click(function(){
+$('#Change').click(function () {
     var Text = $('#Textbox').val();
     $('.date').find('.--choose').find('.date-text').text(Text);
     $('.--choose').removeClass('--choose');
@@ -47,15 +48,15 @@ $('#Change').click(function(){
 $('#No').click(function () {
     $('.check').fadeOut(300);
     document.documentElement.style.overflow = 'auto';
-        document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto';
 })
 
-$('#Yes').click(function(){
+$('#Yes').click(function () {
     $('.date-text').text('');
     $('.--choose').removeClass('--choose');
     $('.check').fadeOut(300);
     document.documentElement.style.overflow = 'auto';
-        document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto';
 })
 
 function screenshot() {
