@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: serif-light;
-    src: url(/font/NotoSerifCJKtc-Light.otf);
+    src: url(/yenyen/font/NotoSerifCJKtc-Light.otf);
 }
 
 @font-face {
     font-family: number;
-    src: url(/font/AkayaTelivigala-Regular.ttf);
+    src: url(/yenyen/font/AkayaTelivigala-Regular.ttf);
 }
 
 body {
