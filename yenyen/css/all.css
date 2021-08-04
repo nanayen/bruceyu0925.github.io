@@ -443,3 +443,9 @@ input[type="color"]::-webkit-color-swatch {
     font-size: 30px;
     display: none;
 }
+
+@media screen and (max-width: 1050px) {
+    .alert {
+        display: block;
+    }
+}
