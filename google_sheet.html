@@ -201,25 +201,9 @@
         <span>Copyright 2021 &copy;<a href="index.html"><u>Bruce Yu Design</u></a> 版權所有</span>
     </footer>
 
-    <script src="/js/all.js"></script>
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script src="/js/jquery-ajex-1.6.4.js"></script>
-
-    <script>
-
-        $(window).load(function () {
-            $("#loading").delay(350).fadeOut(500);
-        })
-
-        $('#List').click(function () {
-            $(this).stop(true, true).toggleClass('open');
-            $('.header .navi-ls').stop(true, true).toggleClass('slide');
-        })
-
-        $('a[href="#Top"]').click(function () {
-            $('html,body').animate({ scrollTop: 0 }, 800, 'swing')
-        });
-    </script>
+    <script src="/js/all.js"></script>
 
 </body>
 
