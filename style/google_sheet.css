@@ -1,0 +1,36 @@
+/* Round --------------------------------- */
+
+.round-ls {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 4rem;
+}
+
+.round-li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 180px;
+	width: 180px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	background-color: #efefef;
+	box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+	color: var(--major);
+}
+
+.round-span {
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.round-icon {
+	font-size: 50px;
+	opacity: .8;
+}
