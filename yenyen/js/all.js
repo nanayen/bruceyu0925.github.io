@@ -75,7 +75,7 @@ $('.font-li').click(function () {
 // 格式設定
 $('#Apply-Setformat').click(function () {
     var Color = $('.color').val();
-    var Size = $('.size').val();
+    var Size = $('.size').val()+'px';
     var Level = $('.level').find('.--click').val();
     var Vertical = $('.vertical').find('.--click').val();
     var Bold = $('.bold.--click').val();
@@ -102,7 +102,7 @@ $('#Apply-Setformat').click(function () {
 // 控制表重設函數
 function FormatBox_reset(){
     $('.color').val('#4F1644');
-    $('.size').val('12');
+    $('.size').val('12px');
     $('.format-li').removeClass('--click');
     $('.level').find('.center').addClass('--click');
     $('.vertical').find('.flex-start').addClass('--click');
@@ -112,7 +112,7 @@ function FormatBox_reset(){
 // 格式重設
 $('#Clear-Setformat').click(function () {
     $('.--choose').find('.date-text').css('color', '#4F1644');
-    $('.--choose').find('.date-text').css('font-size', '12');
+    $('.--choose').find('.date-text').css('font-size', '12px');
     $('.--choose').css('text-align', 'center');
     $('.--choose').css('align-items', 'flex-start');
     $('.--choose').find('.date-text').css('font-weight', 'normal');
@@ -132,7 +132,7 @@ $('#No').click(function () {
 $('#Yes').click(function () {
 
     $('.date-text').css('color', '#4F1644');
-    $('.date-text').css('font-size', '12');
+    $('.date-text').css('font-size', '12px');
     $('.date-li').css('text-align', 'center');
     $('.date-li').css('align-items', 'flex-start');
     $('.date-text').css('font-weight', 'normal');
