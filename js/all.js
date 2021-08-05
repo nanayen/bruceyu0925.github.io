@@ -1,3 +1,4 @@
+// 滑動載入
 window.onload = function () {
     setEvent();
 }
@@ -38,3 +39,19 @@ function doScroll(e) {
     }
 
 }
+
+// 讀取畫面
+$(window).load(function () {
+    $("#loading").delay(350).fadeOut(500);
+})
+
+// 手機版List清單
+$('#List').click(function () {
+    $(this).stop(true, true).toggleClass('open');
+    $('.header .navi-ls').stop(true, true).toggleClass('slide');
+})
+
+// 置頂按鈕
+$('a[href="#Top"]').click(function () {
+    $('html,body').animate({ scrollTop: 0 }, 800, 'swing')
+});
