@@ -55,7 +55,7 @@ $('#Title').find('.color').change(function(){
 })
 
 $('#Title').find('.size').change(function(){
-    var Size = $('#Title').find('.size').val();
+    var Size = $('#Title').find('.size').val()+'px';
     $('.block-title-text').css('font-size', Size);
 })
 
@@ -88,7 +88,7 @@ $('#Text').find('.color').change(function(){
 })
 
 $('#Text').find('.size').change(function(){
-    var Size = $('#Text').find('.size').val();
+    var Size = $('#Text').find('.size').val()+'px';
     $('.block-desc-text').css('font-size', Size);
 })
 
@@ -103,14 +103,14 @@ $('#No').click(function () {
 $('#Yes').click(function () {
 
     $('.block-title-text').css('color', '#481e6b');
-    $('.block-title-text').css('font-size', '32');
+    $('.block-title-text').css('font-size', '32px');
     $('.block-title-text').css('text-align', 'center');
     $('.block-title-text').css('font-weight', 'normal');
     $('.block-title-text').css('font-style', 'normal');
     $('.block-title-text').css('text-decoration', 'none');
 
     $('.block-desc-text').css('color', '#532a75');
-    $('.block-desc-text').css('font-size', '20');
+    $('.block-desc-text').css('font-size', '20px');
     $('.block-desc-text').css('text-align', 'center');
     $('.block-desc-text').css('font-weight', 'normal');
     $('.block-desc-text').css('font-style', 'normal');

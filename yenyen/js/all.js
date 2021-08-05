@@ -102,7 +102,7 @@ $('#Apply-Setformat').click(function () {
 // 控制表重設函數
 function FormatBox_reset(){
     $('.color').val('#4F1644');
-    $('.size').val('12px');
+    $('.size').val('12');
     $('.format-li').removeClass('--click');
     $('.level').find('.center').addClass('--click');
     $('.vertical').find('.flex-start').addClass('--click');
