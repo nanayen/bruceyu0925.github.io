@@ -577,12 +577,12 @@
             Btn.eq(getpic_num).addClass('switcher-btn-click');
         }, 3000)
 
-        $('.switcher').mouseenter(function () {
+        $('.switcher').mousedown(function () {
             $('.switcher-img-ls').removeClass('switcher-img-run');
             $('.switcher-btn-ls').removeClass('switcher-btn-run');
         })
 
-        $('.switcher').mouseleave(function () {
+        $('.switcher').mouseup(function () {
             $('.switcher-img-ls').addClass('switcher-img-run');
             $('.switcher-btn-ls').addClass('switcher-btn-run');
         })
