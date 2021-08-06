@@ -5,8 +5,6 @@ setInterval(function () {
     if (getpic_num > $('.switcher-img-li').length - 1) {
         getpic_num = 0;
     }
-    var setpic_num = getpic_num + 1
-    var setpic_src = 'image/vis_ecoffee/vis_ecoffee_' + setpic_num + '.jpg';
 
     var Img = $('.switcher-img-run').find('.switcher-img-li');
     var Btn = $('.switcher-btn-run').find('.switcher-btn-li');
