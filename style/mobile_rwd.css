@@ -270,6 +270,9 @@
 	.color-desc {
 		font-size: 14px;
 	}
+	.blog-bigimg{
+		top: 45%;
+	}
 	.blog-btn{
 		top: unset;
 		bottom: 35px;
