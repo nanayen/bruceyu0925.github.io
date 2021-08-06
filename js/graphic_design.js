@@ -41,20 +41,55 @@ $('.switcher-btn-li').mousedown(function () {
 
 })
 
+// Blog圖片放大，鎖左右切換函數
+function Bigpic_Btn(){
+    var num_total = $('.blog-li').length;
+    var num_this = parseInt($('.blog-bigimg').attr('src').substr(-7,3));
+    if(num_this == num_total){
+        $('.prev').addClass('--lock');
+    }else if (num_this == 1){
+        $('.next').addClass('--lock');
+    }else{
+        $('.blog-btn').removeClass('--lock');
+    }
+}
+
 // Blog圖片放大
 $('.blog-li').click(function () {
     $('.blog-big').stop(true, true).fadeIn(300);
 
     var getSrc = $(this).find('.img-resp').attr('src');
     $('.blog-bigimg').attr('src', getSrc);
+    Bigpic_Btn();
 
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
 })
 
-$('.blog-big').click(function () {
-    $(this).stop(true, true).fadeOut(300);
+$('.prev').click(function(){
+    var num_Chg = $('.blog-bigimg').attr('src').substr(-7,3);
+    num_Chg = (parseInt(num_Chg)+1)+'';
+    while(num_Chg.length < 3){
+        num_Chg = "0" + num_Chg;
+    }
+    var num_Src = '/image/poster/poster_' + num_Chg + '.jpg';
+    $('.blog-bigimg').attr('src', num_Src);
+    Bigpic_Btn();
+})
 
+$('.next').click(function(){
+    var num_Chg = $('.blog-bigimg').attr('src').substr(-7,3);
+    num_Chg = (parseInt(num_Chg)-1)+'';
+    while(num_Chg.length < 3){
+        num_Chg = "0" + num_Chg;
+    }
+    var num_Src = '/image/poster/poster_' + num_Chg + '.jpg';
+    $('.blog-bigimg').attr('src', num_Src);
+    Bigpic_Btn();
+})
+
+$('.blog-close').click(function(){
+    $('.blog-big').stop(true, true).fadeOut(300);
     document.documentElement.style.overflow = 'auto';
     document.body.style.overflow = 'auto';
 })

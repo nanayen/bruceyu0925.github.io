@@ -52,6 +52,15 @@ $('#List').click(function () {
 })
 
 // 置頂按鈕
-$('a[href="#Top"]').click(function () {
+$('.btn-top').click(function () {
     $('html,body').animate({ scrollTop: 0 }, 800, 'swing')
-});
+})
+
+// 置頂按鈕隱藏
+$(window).scroll(function(){
+    if( scrollY > 200){
+        $('.btn-top').removeClass('--hide');
+    }else{
+        $('.btn-top').addClass('--hide');
+    }
+})
