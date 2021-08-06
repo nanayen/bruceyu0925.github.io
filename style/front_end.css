@@ -91,9 +91,15 @@
 }
 
 .color-text {
-	top: 35%;
-	font-size: 24px;
+	font-weight: 600;
+	width: 150px;
+	top: 30%;
+	font-size: 28px;
 	text-transform: uppercase;
+	text-align: center;
+	background-color: unset;
+	outline: none;
+	border: none;
 }
 
 .color-picker {
