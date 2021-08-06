@@ -44,8 +44,10 @@ function Bigpic_Btn(){
     var num_this = parseInt($('.blog-bigimg').attr('src').substr(-7,3));
     if(num_this == num_total){
         $('.prev').addClass('--lock');
+        $('.next').removeClass('--lock');
     }else if (num_this == 1){
         $('.next').addClass('--lock');
+        $('.prev').removeClass('--lock');
     }else{
         $('.blog-btn').removeClass('--lock');
     }
