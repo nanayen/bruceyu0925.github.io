@@ -271,11 +271,11 @@
 		font-size: 14px;
 	}
 	.blog-bigimg{
-		top: 45%;
+		top: 42%;
 	}
 	.blog-btn{
 		top: unset;
-		bottom: 11%;
+		bottom: 10%;
 		width: 40px;
 		height: 40px;
 		transform: translateY(50%);
@@ -285,7 +285,7 @@
 		-o-transform: translateY(50%);
 }
 .blog-close{
-	bottom: 11%;
+	bottom: 9%;
 	transform: translateY(50%) translateX(-50%);
 	-webkit-transform: translateY(50%) translateX(-50%);
 	-moz-transform: translateY(50%) translateX(-50%);
