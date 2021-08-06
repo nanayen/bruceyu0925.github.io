@@ -34,10 +34,50 @@ $('.color-picker-btn').click(function () {
     $(this).parent().find('.color-picker-border').toggleClass('--click')
 })
 
+// 使用鍵入
+$('#Dis-Major').find('.color-text').blur(function(){
+    var Color = $(this).val();
+    try{
+        document.documentElement.style.setProperty('--major', Color);
+        MajorPicker.color.hexString = Color ;
+    }catch{
+        Color = MajorPicker.color.hexString;
+        $(this).val(Color);
+        document.documentElement.style.setProperty('--major', Color);
+        MajorPicker.color.hexString = Color;
+    }
+})
+
+$('#Dis-Minor').find('.color-text').blur(function(){
+    var Color = $(this).val();
+    try{
+        document.documentElement.style.setProperty('--minor', Color);
+        MinorPicker.color.hexString = Color ;
+    }catch{
+        Color = MinorPicker.color.hexString;
+        $(this).val(Color);
+        document.documentElement.style.setProperty('--minor', Color);
+        MinorPicker.color.hexString = Color ;
+    }
+})
+
+$('#Dis-Title').find('.color-text').blur(function(){
+    var Color = $(this).val();
+    try{
+        document.documentElement.style.setProperty('--title', Color);
+        TitlePicker.color.hexString = Color ;
+    }catch{
+        Color = TitlePicker.color.hexString;
+        $(this).val(Color);
+        document.documentElement.style.setProperty('--title', Color);
+        TitlePicker.color.hexString = Color ;
+    }
+})
+
 // 使用調色盤
 MajorPicker.on(['color:init', 'color:change'], function () {
     var Major = MajorPicker.color.hexString;
-    $('#Dis-Major').find('.color-text').text(Major);
+    $('#Dis-Major').find('.color-text').val(Major);
     document.documentElement.style.setProperty('--major', Major);
 
     var MajorVal = MajorPicker.color.value;
@@ -50,7 +90,7 @@ MajorPicker.on(['color:init', 'color:change'], function () {
 
 MinorPicker.on(['color:init', 'color:change'], function () {
     var Minor = MinorPicker.color.hexString;
-    $('#Dis-Minor').find('.color-text').text(Minor);
+    $('#Dis-Minor').find('.color-text').val(Minor);
     document.documentElement.style.setProperty('--minor', Minor);
 
     var MinorVal = MinorPicker.color.value;
@@ -63,7 +103,7 @@ MinorPicker.on(['color:init', 'color:change'], function () {
 
 TitlePicker.on(['color:init', 'color:change'], function () {
     var Title = TitlePicker.color.hexString;
-    $('#Dis-Title').find('.color-text').text(Title);
+    $('#Dis-Title').find('.color-text').val(Title);
     document.documentElement.style.setProperty('--title', Title);
 
     var TitleVal = TitlePicker.color.value;
