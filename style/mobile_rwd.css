@@ -270,6 +270,25 @@
 	.color-desc {
 		font-size: 14px;
 	}
+	.blog-btn{
+		top: unset;
+		bottom: 35px;
+		width: 40px;
+		height: 40px;
+		transform: translateY(50%);
+		-webkit-transform: translateY(50%);
+		-moz-transform: translateY(50%);
+		-ms-transform: translateY(50%);
+		-o-transform: translateY(50%);
+}
+.blog-close{
+	bottom: 35px;
+	transform: translateY(50%) translateX(-50%);
+	-webkit-transform: translateY(50%) translateX(-50%);
+	-moz-transform: translateY(50%) translateX(-50%);
+	-ms-transform: translateY(50%) translateX(-50%);
+	-o-transform: translateY(50%) translateX(-50%);
+}
 }
 
 @media screen and (max-width: 480px) {
