@@ -388,6 +388,7 @@ a {
 /* Footer --------------------------------- */
 
 .btn-top {
+	cursor: pointer;
 	position: fixed;
 	right: 10vw;
 	bottom: 90px;
@@ -406,10 +407,18 @@ a {
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	-o-border-radius: 50%;
+	transition-duration:300ms;
+
 }
 
 .btn-top:hover {
 	opacity: .9;
+}
+
+.btn-top.--hide{
+	opacity: 0;
+	z-index: 1;
+	pointer-events: none;
 }
 
 .footer {
