@@ -55,7 +55,7 @@ function Bigpic_Btn(){
 
 // Blog圖片放大
 $('.blog-li').click(function () {
-    $('.blog-big').stop(true, true).fadeIn(300);
+    $('.blog-big').addClass('--show');
 
     var getSrc = $(this).find('.img-resp').attr('src');
     $('.blog-bigimg').attr('src', getSrc);
@@ -88,7 +88,7 @@ $('.next').click(function(){
 })
 
 $('.blog-close').click(function(){
-    $('.blog-big').stop(true, true).fadeOut(300);
+    $('.blog-big').removeClass('--show');
     document.documentElement.style.overflow = 'auto';
     document.body.style.overflow = 'auto';
 })
