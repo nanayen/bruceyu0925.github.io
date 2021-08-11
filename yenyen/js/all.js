@@ -1,3 +1,30 @@
+// 畫面縮放及定位功能
+function AutoWidth(){
+    var Width = document.body.offsetWidth;
+    $('.phone-box').css('width',Width-400);
+}
+
+function AutoCenter(){
+    var OuterW = document.getElementById('Outer').offsetWidth;
+    var InnerW = document.getElementById('Inner').offsetWidth;
+    var OuterH = document.getElementById('Outer').offsetHeight;
+    var InnerH = document.getElementById('Inner').offsetHeight;
+    
+    $('.phone-box').scrollLeft((InnerW-OuterW)/2);
+    $('.phone-box').scrollTop((InnerH-OuterH)/2);
+
+    $('.phone').css('transform','scale(100%)');
+    $('#Window-Size').val(100);
+    $('.range-text').text('100%');
+}
+
+AutoWidth();
+AutoCenter();
+
+window.onresize = function(){
+    AutoWidth();
+}
+
 // 日期設定
 $('#Apply-Setdate').click(function () {
     
@@ -33,6 +60,18 @@ $('#Clear-All').click(function () {
     $('.check').fadeIn(300);
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
+})
+
+// 畫面大小
+$('#Window-Size').on("input",function(){
+    var Per = $(this).val()+'%';
+    $('.range-text').text(Per);
+    $('.phone').css('transform','scale('+Per+')')
+});
+
+// 畫面置中
+$('#Move-Center').click(function(){
+    AutoCenter();
 })
 
 // 選取工具
@@ -149,17 +188,16 @@ $('#Yes').click(function () {
 })
 
 // 匯出圖片檔
-function screenshot() {
+$('#btnSave').click(function() {
 
     $('.--choose').removeClass('--choose');
 
+    AutoCenter();
     html2canvas(document.getElementById('ScreenShot')).then(function (canvas) {
-
         document.body.appendChild(canvas);
 
         var a = document.createElement('a');
         a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-
         var DateYM = $('#Setdate').val();
         var DateY = DateYM.substr(0, 4);
         var DateM = DateYM.substr(-2, 2);
@@ -169,4 +207,4 @@ function screenshot() {
 
         $('canvas').remove();
     });
-}
+})
