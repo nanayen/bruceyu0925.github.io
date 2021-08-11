@@ -12,16 +12,17 @@
     src: url(/yenyen/font/AkayaTelivigala-Regular.ttf);
 }
 
-body {
+.board{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: row;
     background-color: #eee;
+    transition-duration: 400ms;
 }
 
 .set-box {
-    position: relative;
     width: 400px;
+    height: 100vh;
     background-color: #ddd;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
     z-index: 2;
@@ -29,35 +30,34 @@ body {
 }
 
 .phone-box {
+    overflow: auto;
     position: relative;
     height: 100vh;
-    width: 414px;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.phone-board {
+    width: 3000px;
+    height: 3000px;
+    position: relative;
 }
 
 :root {
     --major: #6d5eb1;
-    --major80per: rgba(109, 94, 177 , .8);
+    --major80per: rgba(109, 94, 177, .8);
     --minor: #a197ff;
 }
 
 /* 手機畫面 */
 
 .phone {
+    position: absolute;
+    left: 1293px;
+    top: 1132px;
     font-family: "number", "serif-light";
     width: 414px;
     height: 736px;
     background: linear-gradient(to right, #d194be 0%, #fcd5ce 100%);
     padding: 5px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
 }
 
 .date-title {
@@ -142,7 +142,7 @@ body {
     opacity: 1;
 }
 
-.date-li.--choose {
+.edit .date-li.--choose {
     background-color: rgba(255, 255, 255, .75);
 }
 
@@ -190,22 +190,16 @@ canvas {
 /* 控制板 */
 
 .set {
-    position: absolute;
     display: flex;
     flex-direction: column;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
 .set-block {
-    width: 320px;
     padding: 20px;
     background-color: rgba(255, 255, 255, .4);
     border-radius: 10px;
@@ -294,7 +288,44 @@ canvas {
     width: 200px;
 }
 
-#Setdate{
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 6px;
+    border-radius: 3px;
+    outline: none;
+    background: #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    position: relative;
+    width:10px;
+    height:20px;
+    background:var(--major);
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    -ms-border-radius:2px;
+    -o-border-radius:2px;
+}
+
+.range-text{
+    color: #bbb;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: right;
+    
+}
+
+#Setdate {
     color: var(--major);
 }
 
@@ -352,19 +383,20 @@ input[type="color"]:hover {
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
-	padding: 0;
+    padding: 0;
 }
+
 input[type="color"]::-webkit-color-swatch {
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
-    border:none;
+    border: none;
     padding: 0;
 }
 
-.size{
+.size {
     height: 30px;
     width: 64px;
     border-radius: 6px;
@@ -381,7 +413,7 @@ input[type="color"]::-webkit-color-swatch {
     transition-duration: 150ms;
 }
 
-.size:hover{
+.size:hover {
     border-color: var(--major);
 }
 
@@ -428,24 +460,4 @@ input[type="color"]::-webkit-color-swatch {
     color: var(--minor);
 }
 
-/* 不支援通知 */
-
-.alert {
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    background-color: rgba(0, 0, 0, .85);
-    z-index: 4;
-    color: #fff;
-    text-align: center;
-    line-height: 100vh;
-    font-size: 30px;
-    display: none;
-}
-
-@media screen and (max-width: 1050px) {
-    .alert {
-        display: block;
-    }
-}
+/* RWD */
