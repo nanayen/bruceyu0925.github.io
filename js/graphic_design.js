@@ -16,16 +16,15 @@ setInterval(function () {
     Btn.eq(getpic_num).addClass('switcher-btn-click');
 }, 3000)
 
-$('.switcher').mousedown(function () {
-    $('.switcher-img-ls').removeClass('switcher-img-run');
-    $('.switcher-btn-ls').removeClass('switcher-btn-run');
+// 點選暫停播放功能
+$('.switcher-status').click(function () {
+    $('.switcher-img-ls').toggleClass('switcher-img-run');
+    $('.switcher-btn-ls').toggleClass('switcher-btn-run');
+    $('.switcher-play').toggleClass('--show');
+    $('.switcher-pause').toggleClass('--show');
 })
 
-$('.switcher').mouseup(function () {
-    $('.switcher-img-ls').addClass('switcher-img-run');
-    $('.switcher-btn-ls').addClass('switcher-btn-run');
-})
-
+// 切換圖片功能
 $('.switcher-btn-li').mousedown(function () {
 
     $('.switcher-btn-click').stop(true, true).removeClass('switcher-btn-click');
@@ -35,7 +34,6 @@ $('.switcher-btn-li').mousedown(function () {
 
     $('.switcher-img-li').removeClass('switcher-img-cover');
     $('.switcher-img-li').eq(pic_num - 1).addClass('switcher-img-cover');
-
 })
 
 // Blog圖片放大，鎖左右切換函數

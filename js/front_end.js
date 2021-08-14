@@ -34,13 +34,18 @@ $('.color-picker-btn').click(function () {
     $(this).parent().find('.color-picker-border').toggleClass('--click')
 })
 
+// 關閉調色盤
+$('.color-text').click(function () {
+    $('.color-picker-border').removeClass('--click')
+})
+
 // 使用鍵入
-$('#Dis-Major').find('.color-text').blur(function(){
+$('#Dis-Major').find('.color-text').blur(function () {
     var Color = $(this).val();
-    try{
+    try {
         document.documentElement.style.setProperty('--major', Color);
-        MajorPicker.color.hexString = Color ;
-    }catch{
+        MajorPicker.color.hexString = Color;
+    } catch {
         Color = MajorPicker.color.hexString;
         $(this).val(Color);
         document.documentElement.style.setProperty('--major', Color);
@@ -48,29 +53,35 @@ $('#Dis-Major').find('.color-text').blur(function(){
     }
 })
 
-$('#Dis-Minor').find('.color-text').blur(function(){
+$('#Dis-Minor').find('.color-text').blur(function () {
     var Color = $(this).val();
-    try{
+    try {
         document.documentElement.style.setProperty('--minor', Color);
-        MinorPicker.color.hexString = Color ;
-    }catch{
+        MinorPicker.color.hexString = Color;
+    } catch {
         Color = MinorPicker.color.hexString;
         $(this).val(Color);
         document.documentElement.style.setProperty('--minor', Color);
-        MinorPicker.color.hexString = Color ;
+        MinorPicker.color.hexString = Color;
     }
 })
 
-$('#Dis-Title').find('.color-text').blur(function(){
+$('#Dis-Title').find('.color-text').blur(function () {
     var Color = $(this).val();
-    try{
+    try {
         document.documentElement.style.setProperty('--title', Color);
-        TitlePicker.color.hexString = Color ;
-    }catch{
+        TitlePicker.color.hexString = Color;
+    } catch {
         Color = TitlePicker.color.hexString;
         $(this).val(Color);
         document.documentElement.style.setProperty('--title', Color);
-        TitlePicker.color.hexString = Color ;
+        TitlePicker.color.hexString = Color;
+    }
+})
+
+$('.color-text').keydown(function () {
+    if (event.keyCode == 13) {
+        $(this).blur();
     }
 })
 
