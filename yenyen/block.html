@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh_Hant-TW">
+<html lang="zh-Hant-TW">
 
 <head>
     <meta charset="UTF-8">
@@ -21,151 +21,171 @@
     <link rel="stylesheet" href="/yenyen/css/Meyerweb.css">
     <link rel="stylesheet" href="/yenyen/css/block.css">
 
-    <title>文字版製作</title>
+    <title>日程表製作</title>
 </head>
 
 <body>
-    <div class="alert">
-        目前不支援行動裝置
-    </div>
-    <div class="set-box">
-        <div class="set">
-            <div class="set-block">
-                <div class="set-block-row">
-                    <a class="bruce" href="https://bruceyu0925.github.io/index.html" target="_blank">
-                        <img src="/yenyen/image/BruceYuDesign.svg" alt="BruceYuDesign" height="40">
-                    </a>
+    <div class="board edit">
+        <div class="set-box" id="Set-Box">
+            <div class="set">
+                <div class="set-block">
+                    <div class="set-block-row">
+                        <a class="bruce" href="https://bruceyu0925.github.io/index.html" target="_blank">
+                            <img src="/yenyen/image/BruceYuDesign.svg" alt="BruceYuDesign" height="40">
+                        </a>
+                    </div>
+                    <div class="set-block-row">
+                        <h1 class="title">文字版製作</h1>
+                    </div>
                 </div>
-                <div class="set-block-row">
-                    <h1 class="title">文字版製作</h1>
+                <div class="set-block">
+                    <div class="set-block-row">
+                        <span class="set-desc">版面設定</span>
+                    </div>
+                    <div class="set-block-row">
+                        <button class="round hover btn-empty" id="Clear-All">全部重設</button>
+                        <button class="round hover btn-solid" id="btnSave" onclick="screenshot()">下載圖片</button>
+                    </div>
                 </div>
-            </div>
-            <div class="set-block">
-                <div class="set-block-row">
-                    <span class="set-desc">版面設定</span>
-                </div>
-                <div class="set-block-row">
-                    <button class="round hover btn-empty" id="Clear-All">全部重設</button>
-                    <button class="round hover btn-solid" id="btnSave" onclick="screenshot()">下載圖片</button>
-                </div>
-            </div>
 
-            <div class="set-block" id="Title">
-                <div class="set-block-row">
-                    <span class="set-desc">標題文字</span>
-                </div>
-                <div class="set-block-row">
-                    <textarea id="Titlebox" class="input round hover"></textarea>
-                </div>
-                <div class="set-block-row">
-                    <div class="div-block-2col">
-                        <div class="format-ls">
-                            <input type="color" class="color" name="color" value="#481e6b">
-                            <select name="size" class="round size">
-                                <option>32</option>
-                                <option>34</option>
-                                <option>36</option>
-                                <option>38</option>
-                                <option>40</option>
-                                <option>42</option>
-                                <option>44</option>
-                                <option>46</option>
-                                <option>48</option>
-                            </select>
-                        </div>
-                        <div class="format-ls font">
-                            <button value="bolder" class="bold font-li format-li btn-solid round hover"><img
-                                    src="/yenyen/image/format_B.svg" width="20" alt=""></button>
-                            <button value="italic" class="italic font-li format-li btn-solid round hover"><img
-                                    src="/yenyen/image/format_I.svg" width="20" alt=""></button>
-                            <button value="underline" class="underline font-li format-li btn-solid round hover"><img
-                                    src="/yenyen/image/format_U.svg" width="20" alt=""></button>
-                        </div>
+                <div class="set-block">
+                    <div class="set-block-row">
+                        <span class="set-desc">檢視工具</span>
+                    </div>
+                    <div class="set-block-row">
+                        <input type="range" class="hover" name="Window-Size" id="Window-Size" min="50" max="200"
+                            value="100">
+                        <span class="range-text">100%</span>
+                    </div>
+                    <div class="set-block-row">
+                        <button class="round hover btn-solid" id="Move-Center">版面置中</button>
                     </div>
                 </div>
-                <div class="set-block-row">
-                    <div class="div-block-2col">
-                        <div class="format-ls level">
-                            <button value="left" class="left level-li choose-one format-li btn-solid round hover"><img
-                                    src="/yenyen/image/format_left.svg" width="20" alt=""></button>
-                            <button value="center" class="center level-li choose-one format-li btn-solid round hover --click"><img
-                                    src="/yenyen/image/format_center.svg" width="20" alt=""></button>
-                            <button value="right" class="right level-li choose-one format-li btn-solid round hover"><img
-                                    src="/yenyen/image/format_right.svg" width="20" alt=""></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="set-block" id="Text">
-                <div class="set-block-row">
-                    <span class="set-desc">內文文字</span>
-                </div>
-                <div class="set-block-row">
-                    <textarea id="Textbox" class="input round hover"></textarea>
-                </div>
-                <div class="set-block-row">
-                    <div class="div-block-2col">
-                        <div class="format-ls">
-                            <input type="color" class="color" name="color" value="#532a75">
-                            <select name="size" class="round size">
-                                <option>20</option>
-                                <option>22</option>
-                                <option>24</option>
-                                <option>26</option>
-                                <option>28</option>
-                                <option>30</option>
-                                <option>32</option>
-                                <option>34</option>
-                                <option>36</option>
-                            </select>
+                <div class="set-block" id="Title">
+                    <div class="set-block-row">
+                        <span class="set-desc">標題文字</span>
+                    </div>
+                    <div class="set-block-row">
+                        <textarea id="Titlebox" class="input round hover"></textarea>
+                    </div>
+                    <div class="set-block-row">
+                        <div class="div-block-2col">
+                            <div class="format-ls">
+                                <input type="color" class="color" name="color" value="#481e6b">
+                                <select name="size" class="round size">
+                                    <option>32</option>
+                                    <option>34</option>
+                                    <option>36</option>
+                                    <option>38</option>
+                                    <option>40</option>
+                                    <option>42</option>
+                                    <option>44</option>
+                                    <option>46</option>
+                                    <option>48</option>
+                                </select>
+                            </div>
+                            <div class="format-ls font">
+                                <button value="bolder" class="bold font-li format-li btn-solid round hover"><img
+                                        src="/yenyen/image/format_B.svg" width="20" alt=""></button>
+                                <button value="italic" class="italic font-li format-li btn-solid round hover"><img
+                                        src="/yenyen/image/format_I.svg" width="20" alt=""></button>
+                                <button value="underline" class="underline font-li format-li btn-solid round hover"><img
+                                        src="/yenyen/image/format_U.svg" width="20" alt=""></button>
+                            </div>
                         </div>
-                        <div class="format-ls font">
-                            <button value="bolder" class="bold font-li format-li btn-solid round hover"><img
-                                    src="/yenyen/image/format_B.svg" width="20" alt=""></button>
-                            <button value="italic" class="italic font-li format-li btn-solid round hover"><img
-                                    src="/yenyen/image/format_I.svg" width="20" alt=""></button>
-                            <button value="underline" class="underline font-li format-li btn-solid round hover"><img
-                                    src="/yenyen/image/format_U.svg" width="20" alt=""></button>
+                    </div>
+                    <div class="set-block-row">
+                        <div class="div-block-2col">
+                            <div class="format-ls level">
+                                <button value="left"
+                                    class="left level-li choose-one format-li btn-solid round hover"><img
+                                        src="/yenyen/image/format_left.svg" width="20" alt=""></button>
+                                <button value="center"
+                                    class="center level-li choose-one format-li btn-solid round hover --click"><img
+                                        src="/yenyen/image/format_center.svg" width="20" alt=""></button>
+                                <button value="right"
+                                    class="right level-li choose-one format-li btn-solid round hover"><img
+                                        src="/yenyen/image/format_right.svg" width="20" alt=""></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="set-block-row">
-                    <div class="div-block-2col">
-                        <div class="format-ls level">
-                            <button value="left" class="left level-li choose-one format-li btn-solid round hover"><img
-                                    src="/yenyen/image/format_left.svg" width="20" alt=""></button>
-                            <button value="center" class="center level-li choose-one format-li btn-solid round hover --click"><img
-                                    src="/yenyen/image/format_center.svg" width="20" alt=""></button>
-                            <button value="right" class="right level-li choose-one format-li btn-solid round hover"><img
-                                    src="/yenyen/image/format_right.svg" width="20" alt=""></button>
+
+                <div class="set-block" id="Text">
+                    <div class="set-block-row">
+                        <span class="set-desc">內文文字</span>
+                    </div>
+                    <div class="set-block-row">
+                        <textarea id="Textbox" class="input round hover"></textarea>
+                    </div>
+                    <div class="set-block-row">
+                        <div class="div-block-2col">
+                            <div class="format-ls">
+                                <input type="color" class="color" name="color" value="#532a75">
+                                <select name="size" class="round size">
+                                    <option>20</option>
+                                    <option>22</option>
+                                    <option>24</option>
+                                    <option>26</option>
+                                    <option>28</option>
+                                    <option>30</option>
+                                    <option>32</option>
+                                    <option>34</option>
+                                    <option>36</option>
+                                </select>
+                            </div>
+                            <div class="format-ls font">
+                                <button value="bolder" class="bold font-li format-li btn-solid round hover"><img
+                                        src="/yenyen/image/format_B.svg" width="20" alt=""></button>
+                                <button value="italic" class="italic font-li format-li btn-solid round hover"><img
+                                        src="/yenyen/image/format_I.svg" width="20" alt=""></button>
+                                <button value="underline" class="underline font-li format-li btn-solid round hover"><img
+                                        src="/yenyen/image/format_U.svg" width="20" alt=""></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="set-block-row">
+                        <div class="div-block-2col">
+                            <div class="format-ls level">
+                                <button value="left"
+                                    class="left level-li choose-one format-li btn-solid round hover"><img
+                                        src="/yenyen/image/format_left.svg" width="20" alt=""></button>
+                                <button value="center"
+                                    class="center level-li choose-one format-li btn-solid round hover --click"><img
+                                        src="/yenyen/image/format_center.svg" width="20" alt=""></button>
+                                <button value="right"
+                                    class="right level-li choose-one format-li btn-solid round hover"><img
+                                        src="/yenyen/image/format_right.svg" width="20" alt=""></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
-    </div>
-    <div class="check">
-        <div class="check-border">
-            <span class="check-text">確定要清除所有文字嗎？</span>
-            <div class="btn-ls">
-                <button class="round hover btn-empty" id="No">取　消</button>
-                <button class="round hover btn-solid" id="Yes">確　定</button>
+        <div class="check">
+            <div class="check-border">
+                <span class="check-text">確定要清除所有文字嗎？</span>
+                <div class="btn-ls">
+                    <button class="round hover btn-empty" id="No">取　消</button>
+                    <button class="round hover btn-solid" id="Yes">確　定</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="phone-box">
-        <div class="phone" id="ScreenShot">
-            <div class="border">
-                <div class="block-title">
-                    <h2 class="block-title-text"></h2>
+        <div id="Outer" class="phone-box">
+            <div id="Inner" class="phone-board">
+                <div class="phone" id="ScreenShot">
+                    <div class="border">
+                        <div class="block-title">
+                            <h2 class="block-title-text"></h2>
+                        </div>
+                        <span class="divider"></span>
+                        <div class="block-desc">
+                            <p class="block-desc-text"></p>
+                        </div>
+                        <img class="date-logo" src="/yenyen/image/logo.png" height="80" alt="YenYenLOGO">
+                    </div>
                 </div>
-                <span class="divider"></span>
-                <div class="block-desc">
-                    <p class="block-desc-text"></p>
-                </div>
-                <img class="date-logo" src="/yenyen/image/logo.png" height="80" alt="YenYenLOGO">
             </div>
         </div>
     </div>
