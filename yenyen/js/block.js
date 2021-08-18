@@ -25,11 +25,93 @@ window.onresize = function () {
     AutoWidth();
 }
 
-// 全部清空
-$('#Clear-All').click(function () {
-    $('.check').fadeIn(300);
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
+// 模式擇一
+$('.choose-one').click(function () {
+    $(this).parent().find('.choose-one').removeClass('--click');
+    $(this).addClass('--click');
+})
+
+// 背景設定函數
+var Back_Solid = function () {
+    var Css_Value = $('.back-set-solid').val();
+    $('.phone').css('background', 'none');
+    $('.phone').css('background-color', Css_Value);
+}
+
+var Back_Gradient = function () {
+    var Gra1 = $('.gradient_1').val();
+    var Gra2 = $('.gradient_2').val();
+    var Deg = $('.gradient_deg').val() + 'deg';
+    var Css_Value = 'linear-gradient(' + Deg + ',' + Gra1 + ' 0%,' + Gra2 + ' 100%)';
+    $('.phone').css('background-color', 'none');
+    $('.phone').css('background', Css_Value);
+}
+
+$('#Img-Btn').click(function () {
+    $('#Board-Img').click();
+})
+
+var Back_Image = function () {
+    var file = $('#Board-Img')[0].files[0];
+    var reader = new FileReader;
+    reader.onload = function (e) {
+        var Css_Value = 'url(' + e.target.result + ')';
+        $('.phone').css('background-color', 'none');
+        $('.phone').css('background-image', Css_Value);
+        $('.phone').css('background-repeat', 'no-repeat');
+        $('.phone').css('background-position', 'center center');
+        $('.phone').css('background-size', 'cover');
+    };
+    try {
+        reader.readAsDataURL(file);
+    } catch { }
+}
+
+$('#Board-Img').change(Back_Image);
+$('.back-set-gradient').on('input', Back_Gradient);
+$('.back-set-solid').on('input', Back_Solid);
+
+//切換背景模式
+$('.back-li').click(function () {
+    var Back_kind = $('.back-li').index(this);
+    $('.back-set').removeClass('--show');
+    $('.back-set').eq(Back_kind).addClass('--show');
+
+    switch (Back_kind) {
+        case 0:
+            Back_Solid();
+            break;
+        case 1:
+            Back_Gradient();
+            break;
+        case 2:
+            Back_Image();
+            break;
+    }
+})
+
+// 物件顯示
+$('.checkbox-btn').click(function(){
+    $(this).toggleClass('--click');
+})
+
+$('.checkbox-board').click(function(){
+    $('.border').toggleClass('--hide');
+})
+
+$('.checkbox-divider').click(function(){
+    $('.divider').toggleClass('--hide');
+})
+
+$('.checkbox-logo').click(function(){
+    $('#Logo').toggleClass('--hide');
+})
+
+$('.boarder-set').on('input',function(){
+    var BorCol = $(this).val();
+    $('.border').css('border-color',BorCol);
+    $('.divider').css('background-color',BorCol);
+    $('.cls-1').css('fill',BorCol);
 })
 
 // 畫面大小
@@ -45,19 +127,13 @@ $('#Move-Center').click(function () {
 })
 
 // 文字編輯
-    $('#Titlebox').keyup(function () {
-        var Tx = $(this).val();
-        $('.block-title-text').text(Tx);
-    })
-    $('#Textbox').keyup(function () {
-        var Tx = $(this).val();
-        $('.block-desc-text').text(Tx);
-    })
-
-// 格式擇一
-$('.choose-one').click(function () {
-    $(this).parent().find('.choose-one').removeClass('--click');
-    $(this).addClass('--click');
+$('#Titlebox').keyup(function () {
+    var Tx = $(this).val();
+    $('.block-title-text').text(Tx);
+})
+$('#Textbox').keyup(function () {
+    var Tx = $(this).val();
+    $('.block-desc-text').text(Tx);
 })
 
 // 文字其他格式
@@ -88,13 +164,13 @@ $('#Title').find('button').click(function () {
     $('.block-title-text').css('text-decoration', Underline);
 })
 
-$('#Title').find('.color').change(function(){
+$('#Title').find('.color').change(function () {
     var Color = $('#Title').find('.color').val();
     $('.block-title-text').css('color', Color);
 })
 
-$('#Title').find('.size').change(function(){
-    var Size = $('#Title').find('.size').val()+'px';
+$('#Title').find('.size').change(function () {
+    var Size = $('#Title').find('.size').val() + 'px';
     $('.block-title-text').css('font-size', Size);
 })
 
@@ -121,64 +197,19 @@ $('#Text').find('button').click(function () {
     $('.block-desc-text').css('text-decoration', Underline);
 })
 
-$('#Text').find('.color').change(function(){
+$('#Text').find('.color').change(function () {
     var Color = $('#Text').find('.color').val();
     $('.block-desc-text').css('color', Color);
 })
 
-$('#Text').find('.size').change(function(){
-    var Size = $('#Text').find('.size').val()+'px';
+$('#Text').find('.size').change(function () {
+    var Size = $('#Text').find('.size').val() + 'px';
     $('.block-desc-text').css('font-size', Size);
-})
-
-// 對話框，不要清空
-$('#No').click(function () {
-    $('.check').fadeOut(300);
-    document.documentElement.style.overflow = 'auto';
-    document.body.style.overflow = 'auto';
-})
-
-// 對話框，全部清空
-$('#Yes').click(function () {
-
-    $('.block-title-text').css('color', '#481e6b');
-    $('.block-title-text').css('font-size', '32px');
-    $('.block-title-text').css('text-align', 'center');
-    $('.block-title-text').css('font-weight', 'normal');
-    $('.block-title-text').css('font-style', 'normal');
-    $('.block-title-text').css('text-decoration', 'none');
-
-    $('.block-desc-text').css('color', '#532a75');
-    $('.block-desc-text').css('font-size', '20px');
-    $('.block-desc-text').css('text-align', 'center');
-    $('.block-desc-text').css('font-weight', 'normal');
-    $('.block-desc-text').css('font-style', 'normal');
-    $('.block-desc-text').css('text-decoration', 'none');
-
-    $('#Title').find('.color').val('#481e6b');
-    $('#Title').find('.size').val('32');
-    
-    $('#Text').find('.color').val('#532a75');
-    $('#Text').find('.size').val('20');
-
-    $('#Titlebox').val('');
-    $('#Textbox').val('');
-    $('.format-li').removeClass('--click');
-    $('.level').find('.center').addClass('--click');
-    $('.vertical').find('.flex-start').addClass('--click');
-    $('.font-li').removeClass('--click');
-
-    $('.block-title-text').text('');
-    $('.block-desc-text').text('');
-
-    $('.check').fadeOut(300);
-
-    document.documentElement.style.overflow = 'auto';
-    document.body.style.overflow = 'auto';
 })
 
 // 匯出圖片檔
 function screenshot() {
+    AutoCenter();
 
     html2canvas(document.getElementById('ScreenShot')).then(function (canvas) {
 
