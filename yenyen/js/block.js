@@ -34,8 +34,10 @@ $('.choose-one').click(function () {
 // 背景設定函數
 var Back_Solid = function () {
     var Css_Value = $('.back-set-solid').val();
-    $('.phone').css('background', 'none');
-    $('.phone').css('background-color', Css_Value);
+    $('.phone').css({
+        'background': 'none',
+        'background-color': Css_Value
+    });
 }
 
 var Back_Gradient = function () {
@@ -43,8 +45,10 @@ var Back_Gradient = function () {
     var Gra2 = $('.gradient_2').val();
     var Deg = $('.gradient_deg').val() + 'deg';
     var Css_Value = 'linear-gradient(' + Deg + ',' + Gra1 + ' 0%,' + Gra2 + ' 100%)';
-    $('.phone').css('background-color', 'none');
-    $('.phone').css('background', Css_Value);
+    $('.phone').css({
+        'background-color': 'none',
+        'background': Css_Value
+    });
 }
 
 $('#Img-Btn').click(function () {
@@ -56,11 +60,13 @@ var Back_Image = function () {
     var reader = new FileReader;
     reader.onload = function (e) {
         var Css_Value = 'url(' + e.target.result + ')';
-        $('.phone').css('background-color', 'none');
-        $('.phone').css('background-image', Css_Value);
-        $('.phone').css('background-repeat', 'no-repeat');
-        $('.phone').css('background-position', 'center center');
-        $('.phone').css('background-size', 'cover');
+        $('.phone').css({
+            'background-color': 'none',
+            'background-image': Css_Value,
+            'background-repeat': 'no-repeat',
+            'background-position': 'center center',
+            'background-size': 'cover'
+        });
     };
     try {
         reader.readAsDataURL(file);
@@ -91,27 +97,27 @@ $('.back-li').click(function () {
 })
 
 // 物件顯示
-$('.checkbox-btn').click(function(){
+$('.checkbox-btn').click(function () {
     $(this).toggleClass('--click');
 })
 
-$('.checkbox-board').click(function(){
+$('.checkbox-board').click(function () {
     $('.border').toggleClass('--hide');
 })
 
-$('.checkbox-divider').click(function(){
+$('.checkbox-divider').click(function () {
     $('.divider').toggleClass('--hide');
 })
 
-$('.checkbox-logo').click(function(){
+$('.checkbox-logo').click(function () {
     $('#Logo').toggleClass('--hide');
 })
 
-$('.boarder-set').on('input',function(){
+$('.boarder-set').on('input', function () {
     var BorCol = $(this).val();
-    $('.border').css('border-color',BorCol);
-    $('.divider').css('background-color',BorCol);
-    $('.cls-1').css('fill',BorCol);
+    $('.border').css('border-color', BorCol);
+    $('.divider').css('background-color', BorCol);
+    $('.cls-1').css('fill', BorCol);
 })
 
 // 畫面大小
@@ -136,74 +142,74 @@ $('#Textbox').keyup(function () {
     $('.block-desc-text').text(Tx);
 })
 
-// 文字其他格式
+// 格式按鈕點選
 $('.font-li').click(function () {
     $(this).toggleClass('--click');
 })
 
 // 標題格式設定
-$('#Title').find('button').click(function () {
-
-    var Level = $('#Title').find('.level').find('.--click').val();
-    var Bold = $('#Title').find('.bold.--click').val();
+$('#Title button').click(function () {
+    var Level = $('#Title .level .--click').val();
+    var Bold = $('#Title .bold.--click').val();
     if (Bold == undefined) {
         Bold = "normal";
     }
-    var Italic = $('#Title').find('.italic.--click').val();
+    var Italic = $('#Title .italic.--click').val();
     if (Italic == undefined) {
         Italic = "normal";
     }
-    var Underline = $('#Title').find('.underline.--click').val();
+    var Underline = $('#Title .underline.--click').val();
     if (Underline == undefined) {
         Underline = "none";
     }
-
-    $('.block-title-text').css('text-align', Level);
-    $('.block-title-text').css('font-weight', Bold);
-    $('.block-title-text').css('font-style', Italic);
-    $('.block-title-text').css('text-decoration', Underline);
+    $('.block-title-text').css(
+        {
+            'text-align': Level,
+            'font-weight': Bold,
+            'font-style': Italic,
+            'text-decoration': Underline
+        }
+    );
 })
-
-$('#Title').find('.color').on('input',function () {
-    var Color = $('#Title').find('.color').val();
+$('#Title .color').on('input', function () {
+    var Color = $('#Title .color').val();
     $('.block-title-text').css('color', Color);
 })
-
-$('#Title').find('.size').change(function () {
-    var Size = $('#Title').find('.size').val() + 'px';
+$('#Title .size').change(function () {
+    var Size = $('#Title .size').val() + 'px';
     $('.block-title-text').css('font-size', Size);
 })
 
 // 內文格式設定
-$('#Text').find('button').click(function () {
-
-    var Level = $('#Text').find('.level').find('.--click').val();
-    var Bold = $('#Text').find('.bold.--click').val();
+$('#Desc button').click(function () {
+    var Level = $('#Desc .level').find('.--click').val();
+    var Bold = $('#Desc .bold.--click').val();
     if (Bold == undefined) {
         Bold = "normal";
     }
-    var Italic = $('#Text').find('.italic.--click').val();
+    var Italic = $('#Desc .italic.--click').val();
     if (Italic == undefined) {
         Italic = "normal";
     }
-    var Underline = $('#Text').find('.underline.--click').val();
+    var Underline = $('#Desc .underline.--click').val();
     if (Underline == undefined) {
         Underline = "none";
     }
-
-    $('.block-desc-text').css('text-align', Level);
-    $('.block-desc-text').css('font-weight', Bold);
-    $('.block-desc-text').css('font-style', Italic);
-    $('.block-desc-text').css('text-decoration', Underline);
+    $('.block-desc-text').css(
+        {
+            'text-align': Level,
+            'font-weight': Bold,
+            'font-style': Italic,
+            'text-decoration': Underline
+        }
+    );
 })
-
-$('#Text').find('.color').on('input',function () {
-    var Color = $('#Text').find('.color').val();
+$('#Desc .color').on('input', function () {
+    var Color = $('#Desc .color').val();
     $('.block-desc-text').css('color', Color);
 })
-
-$('#Text').find('.size').change(function () {
-    var Size = $('#Text').find('.size').val() + 'px';
+$('#Desc .size').change(function () {
+    var Size = $('#Desc .size').val() + 'px';
     $('.block-desc-text').css('font-size', Size);
 })
 
