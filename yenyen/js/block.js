@@ -38,7 +38,7 @@ var Back_Solid = function () {
         'background': 'none',
         'background-color': Css_Value
     });
-    $('#Image').css('display','none');
+    $('#Image').css('display', 'none');
 }
 
 var Back_Gradient = function () {
@@ -50,7 +50,7 @@ var Back_Gradient = function () {
         'background-color': 'none',
         'background': Css_Value
     });
-    $('#Image').css('display','none');
+    $('#Image').css('display', 'none');
 }
 
 $('#Img-Btn').click(function () {
@@ -62,8 +62,8 @@ var Back_Image = function () {
     var reader = new FileReader;
     reader.onload = function (e) {
         var Css_Value = e.target.result;
-        $('#Image').attr('src',Css_Value);
-        $('#Image').css('display','block');
+        $('#Image').attr('src', Css_Value);
+        $('#Image').css('display', 'block');
     };
     try {
         reader.readAsDataURL(file);
@@ -215,15 +215,26 @@ function screenshot() {
     AutoCenter();
 
     html2canvas(
-        document.querySelector('#ScreenShot'),{scale:10}).then(function (canvas) {
-
+        document.querySelector('#ScreenShot'), { scale: 10 }
+    ).then(function (canvas) {
+        var Today = new Date();
+        var Y = (Today.getFullYear()).toString();
+        var M = (Today.getMonth()+1).toString();
+        if(M.length<2){
+            M = "0"+M;
+        }
+        var D = (Today.getDate()).toString();
+        if(D.length<2){
+            D = "0"+D;
+        }
         var a = document.createElement('a');
 
         a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
 
-        a.download = '文字版.jpg';
+        a.download = '文字版'+Y+M+D+'.jpg';
         a.click();
 
         $('canvas').remove();
-    });
+    }
+    );
 }
