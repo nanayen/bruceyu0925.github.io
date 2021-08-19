@@ -164,7 +164,7 @@ $('#Title').find('button').click(function () {
     $('.block-title-text').css('text-decoration', Underline);
 })
 
-$('#Title').find('.color').change(function () {
+$('#Title').find('.color').on('input',function () {
     var Color = $('#Title').find('.color').val();
     $('.block-title-text').css('color', Color);
 })
@@ -197,7 +197,7 @@ $('#Text').find('button').click(function () {
     $('.block-desc-text').css('text-decoration', Underline);
 })
 
-$('#Text').find('.color').change(function () {
+$('#Text').find('.color').on('input',function () {
     var Color = $('#Text').find('.color').val();
     $('.block-desc-text').css('color', Color);
 })
