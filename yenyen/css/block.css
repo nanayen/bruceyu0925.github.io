@@ -82,7 +82,7 @@
 
 .block-title-text {
 	color: #481e6b;
-	font-size: 32px;
+	font-size: 26px;
 	line-height: 1.3333;
 	text-align: center;
 	white-space: pre-wrap;
@@ -112,7 +112,7 @@
 
 .block-desc-text {
 	text-align: center;
-	font-size: 20px;
+	font-size: 14px;
 	color: #532a75;
 	white-space: pre-wrap;
 	word-break: break-all;
