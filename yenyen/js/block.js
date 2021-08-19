@@ -217,11 +217,11 @@ $('#Desc .size').change(function () {
 function screenshot() {
     AutoCenter();
 
-    html2canvas(document.getElementById('ScreenShot')).then(function (canvas) {
-
-        document.body.appendChild(canvas);
+    html2canvas(
+        document.querySelector('#ScreenShot'),{scale:20}).then(function (canvas) {
 
         var a = document.createElement('a');
+
         a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
 
         a.download = '文字版.jpg';
