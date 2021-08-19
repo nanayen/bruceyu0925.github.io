@@ -218,7 +218,7 @@ function screenshot() {
     AutoCenter();
 
     html2canvas(
-        document.querySelector('#ScreenShot'),{scale:20}).then(function (canvas) {
+        document.querySelector('#ScreenShot'),{scale:10}).then(function (canvas) {
 
         var a = document.createElement('a');
 
