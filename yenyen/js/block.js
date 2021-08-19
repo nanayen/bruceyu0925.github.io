@@ -38,6 +38,7 @@ var Back_Solid = function () {
         'background': 'none',
         'background-color': Css_Value
     });
+    $('#Image').css('display','none');
 }
 
 var Back_Gradient = function () {
@@ -49,6 +50,7 @@ var Back_Gradient = function () {
         'background-color': 'none',
         'background': Css_Value
     });
+    $('#Image').css('display','none');
 }
 
 $('#Img-Btn').click(function () {
@@ -59,14 +61,9 @@ var Back_Image = function () {
     var file = $('#Board-Img')[0].files[0];
     var reader = new FileReader;
     reader.onload = function (e) {
-        var Css_Value = 'url(' + e.target.result + ')';
-        $('.phone').css({
-            'background-color': 'none',
-            'background-image': Css_Value,
-            'background-repeat': 'no-repeat',
-            'background-position': 'center center',
-            'background-size': 'cover'
-        });
+        var Css_Value = e.target.result;
+        $('#Image').attr('src',Css_Value);
+        $('#Image').css('display','block');
     };
     try {
         reader.readAsDataURL(file);
