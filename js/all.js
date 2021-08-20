@@ -37,12 +37,13 @@ function doScroll(e) {
             }
         }
     }
-
 }
 
 // 讀取畫面
 $(window).load(function () {
-    $("#loading").delay(350).fadeOut(500);
+    $("#Loading").delay(2300).fadeOut(300);
+    $('.banr-home-text').addClass('--show');
+    $('.banr-pag-title').addClass('--show');
 })
 
 // 手機版List清單
