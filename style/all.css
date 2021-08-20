@@ -80,7 +80,7 @@ a {
 
 /* Loading --------------------------------- */
 
-#loading {
+#Loading {
 	position: fixed;
 	display: flex;
 	align-items: center;
@@ -89,64 +89,58 @@ a {
 	height: 100%;
 	left: 0;
 	top: 0;
-	background-color: var(--major);
+	background-color: #ddd;
 	z-index: 6
 }
 
-.spinner {
-	margin: 100px auto;
-	width: 50px;
-	height: 40px;
-	text-align: center;
-	font-size: 10px;
+.logo-box{
+	height: 8vw;
+	width: 38vw;
+	overflow: hidden;
+	animation-name: logo-ani-box;
+	animation-duration: 2s;
 }
-
-.spinner>div {
-	background-color: #fff;
-	height: 100%;
-	width: 6px;
-	display: inline-block;
-	-webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
-	animation: sk-stretchdelay 1.2s infinite ease-in-out;
+#BruceLogo{
+	height: 8vw;
 }
-
-.spinner .rect2 {
-	-webkit-animation-delay: -1.1s;
-	animation-delay: -1.1s;
+#BruceLogo .cls-1 {
+	fill:  var(--major);
+	animation-name: logo-ani-cls1;
+	animation-duration: 2s;
 }
-
-.spinner .rect3 {
-	-webkit-animation-delay: -1.0s;
-	animation-delay: -1.0s;
+#BruceLogo .cls-2 {
+	fill: #ddd;
+	animation-name: logo-ani-cls2;
+	animation-duration: 2s;
 }
-
-.spinner .rect4 {
-	-webkit-animation-delay: -0.9s;
-	animation-delay: -0.9s;
-}
-
-.spinner .rect5 {
-	-webkit-animation-delay: -0.8s;
-	animation-delay: -0.8s;
-}
-
-@-webkit-keyframes sk-stretchdelay {
-	0%, 40%, 100% {
-		-webkit-transform: scaleY(0.4)
+@keyframes logo-ani-box{
+	0% , 25%{
+		height: 0vw;
+		width: 8vw;
 	}
-	20% {
-		-webkit-transform: scaleY(1.0)
+	50% , 75%{
+		height: 8vw;
+		width: 8vw;
+	}
+	100%{
+		height: 8vw;
+		width: 38vw;
 	}
 }
-
-@keyframes sk-stretchdelay {
-	0%, 40%, 100% {
-		transform: scaleY(0.4);
-		-webkit-transform: scaleY(0.4);
+@keyframes logo-ani-cls1{
+	0% , 50%{
+		fill: #ddd;
 	}
-	20% {
-		transform: scaleY(1.0);
-		-webkit-transform: scaleY(1.0);
+	70%{
+		fill: var(--major);
+	}
+}
+@keyframes logo-ani-cls2{
+	0% , 50%{
+		fill: var(--major);
+	}
+	70%{
+		fill: #ddd;
 	}
 }
 
@@ -236,25 +230,25 @@ a {
 	margin-left: 12vw;
 	line-height: 14vh;
 	font-size: 10vh;
-	animation-name: FadeOutRight;
-	animation-duration: 3.35s;
 	display: block;
 	position: relative;
+	transform: translateX(-7vw) translateY(0);
+	-webkit-transform: translateX(-7vw) translateY(0);
+	-moz-transform: translateX(-7vw) translateY(0);
+	-ms-transform: translateX(-7vw) translateY(0);
+	-o-transform: translateX(-7vw) translateY(0);
+	transition-duration: 1.5s;
+	transition-delay: 2.6s;
+	opacity: 0;
 }
 
-@keyframes FadeOutRight {
-	0% {
-		right: 7vh;
-		opacity: 0%;
-	}
-	27% {
-		right: 7vh;
-		opacity: 0%;
-	}
-	100% {
-		right: 0vh;
-		opacity: 100%;
-	}
+.banr-home-text.--show{
+	transform: translateX(0) translateY(0);
+	-webkit-transform: translateX(0) translateY(0);
+	-moz-transform: translateX(0) translateY(0);
+	-ms-transform: translateX(0) translateY(0);
+	-o-transform: translateX(0) translateY(0);
+	opacity: 1;
 }
 
 .banr-home-title {
@@ -271,30 +265,30 @@ a {
 	line-height: 6vw;
 	text-align: center;
 	color: #eee;
-	animation-name: FadeOutDown;
-	animation-duration: 2.5s;
 	display: block;
 	position: relative;
+	transform: translateY(-7vh);
+	-webkit-transform: translateY(-7vh);
+	-moz-transform: translateY(-7vh);
+	-ms-transform: translateY(-7vh);
+	-o-transform: translateY(-7vh);
+	transition-duration: 1.5s;
+	transition-delay: 2.6s;
+	opacity: 0;
+}
+
+.banr-pag-title.--show{
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	opacity: 1;
 }
 
 .banr-pag-sm {
 	font-size: 2.5vw;
 	color: var(--minor);
-}
-
-@keyframes FadeOutDown {
-	0% {
-		bottom: 7vh;
-		opacity: 0%;
-	}
-	27% {
-		bottom: 7vh;
-		opacity: 0%;
-	}
-	100% {
-		bottom: 0vh;
-		opacity: 100%;
-	}
 }
 
 /* Base --------------------------------- */
