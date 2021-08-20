@@ -97,30 +97,38 @@ a {
 	height: 8vw;
 	width: 38vw;
 	overflow: hidden;
-	animation-name: logo-ani-box;
+	animation-name: ani-logobox;
 	animation-duration: 2s;
 	position: relative;
 }
+#BY,
+#BruceLogo{
+	height: 8vw;
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 8vw;
+	pointer-events: none;
+}
 
 #BruceLogo {
-	height: 8vw;
-	animation: wave 2s linear 2s infinite;
-	-webkit-animation: wave 2s linear 2s infinite;
+	animation: ani-wave 2s linear 2s infinite;
+	-webkit-animation: ani-wave 2s linear 2s infinite;
 }
 
 #BruceLogo .cls-1 {
 	fill: var(--major);
-	animation-name: logo-ani-cls1;
+	animation-name: ani-BruceLogo;
 	animation-duration: 2s;
 }
 
-#BruceLogo .cls-2 {
+#BY .cls-1 {
 	fill: #ddd;
-	animation-name: logo-ani-cls2;
+	animation-name: ani-BY;
 	animation-duration: 2s;
 }
 
-@keyframes logo-ani-box {
+@keyframes ani-logobox {
 	0%, 25% {
 		height: 0vw;
 		width: 8vw;
@@ -135,7 +143,7 @@ a {
 	}
 }
 
-@keyframes logo-ani-cls1 {
+@keyframes ani-BruceLogo {
 	0%, 50% {
 		fill: #ddd;
 	}
@@ -144,7 +152,7 @@ a {
 	}
 }
 
-@keyframes logo-ani-cls2 {
+@keyframes ani-BY {
 	0%, 50% {
 		fill: var(--major);
 	}
@@ -153,7 +161,7 @@ a {
 	}
 }
 
-@keyframes wave {
+@keyframes ani-wave {
 	0% {
 		filter: brightness(100%);
 		-webkit-filter: brightness(100%);
