@@ -34,6 +34,7 @@
 .switcher-status i{
 	font-size: 60px;
 	color: #fff;
+	pointer-events: none;
 }
 
 .switcher-status.--show{
@@ -148,7 +149,7 @@
 	font-size: 1.2rem;
 	line-height: 2rem;
 	font-weight: 500;
-	color: #aaa;
+	color: #999;
 }
 
 .toggle-border {

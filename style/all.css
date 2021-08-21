@@ -218,6 +218,66 @@ a {
 	display: none;
 }
 
+/* list-btn */
+
+#List {
+	height: 21px;
+	width: 25px;
+	position: relative;
+	cursor: pointer;
+}
+
+#List span {
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 25px;
+	background: #fff;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+	transition: .25s;
+	-ms-transition: .25s;
+	-webkit-transition: .25s;
+	-moz-transition: .25s;
+	-o-transition: .25s;
+}
+
+#List span:nth-child(1) {
+	top: 0px;
+}
+
+#List span:nth-child(2), #List span:nth-child(3) {
+	top: 9px;
+}
+
+#List span:nth-child(4) {
+	top: 18px;
+}
+
+#List.open span:nth-child(1), #List.open span:nth-child(4) {
+	top: 9px;
+	opacity: 0;
+}
+
+#List.open span:nth-child(2) {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+}
+
+#List.open span:nth-child(3) {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+}
+
 /* Banner --------------------------------- */
 
 .banr {
@@ -416,6 +476,7 @@ a {
 .btn-top {
 	cursor: pointer;
 	position: fixed;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 	right: 10vw;
 	bottom: 90px;
 	font-size: 30px;
@@ -564,39 +625,4 @@ a {
 .js-fadeIn-top--active, .js-fadeIn-bottom--active {
 	-webkit-transform: translateY(0);
 	transform: translateY(0)
-}
-
-/* RWD --------------------------------- */
-
-@media screen and (min-width: 1601px) {
-	.container {
-		width: 70vw;
-	}
-}
-
-@media screen and (max-width: 1200px) {
-	.container {
-		width: 80vw;
-	}
-	.banr-home-text {
-		line-height: 12vh;
-		font-size: 8vh;
-	}
-}
-
-@media screen and (max-width: 1024px) {
-	.container {
-		width: 90vw;
-	}
-	.banr-pag-title {
-		font-size: 6.5vw;
-		line-height: 7.5vw;
-	}
-	.banr-pag-sm {
-		font-size: 3.5vw;
-	}
-	.btn-top {
-		right: 5vw;
-		bottom: 90px;
-	}
 }
