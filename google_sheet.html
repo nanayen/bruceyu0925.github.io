@@ -23,17 +23,7 @@
     <link rel="stylesheet" href="style/Meyerweb.css">
     <link rel="stylesheet" href="style/all.css">
     <link rel="stylesheet" href="/style/google_sheet.css">
-
-    <script>
-        function isMobileDevice() {
-            const mobileDevice = ['Android', 'webOS', 'iPhone', 'iPad', 'iPod', 'BlackBerry', 'Windows Phone']
-            let isMobileDevice = mobileDevice.some(e => navigator.userAgent.match(e))
-            return isMobileDevice
-        }
-        if (isMobileDevice() == true) {
-            document.write('<link rel="stylesheet" href="style/mobile_rwd.css">')
-        }
-    </script>
+    <link rel="stylesheet" href="style/rwd.css">
 
     <title>Bruce Yu Design</title>
 </head>
