@@ -2,9 +2,9 @@
 /* Base --------------------------------- */
 
 :root {
-	--major: #4398D9;
-	--minor: #2EC0FF;
-	--title: #1C6392;
+	--major:#4398D9;
+	--minor:#2EC0FF;
+	--title:#1C6392;
 }
 
 *, *::before, *::after {
@@ -431,6 +431,7 @@ a {
 	-moz-border-radius: 10px;
 	-ms-border-radius: 10px;
 	-o-border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 
 .base-link-li a:hover {

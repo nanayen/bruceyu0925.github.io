@@ -113,16 +113,6 @@
 	.banr-pag {
 		height: 60vh;
 	}
-	.base {
-		padding-top: 3.5rem;
-		padding-bottom: 3.5rem;
-	}
-	.align-c {
-		text-align: left;
-	}
-	.hide-900 {
-		display: none;
-	}
 }
 
 @media screen and (max-width: 768px) {
@@ -175,6 +165,16 @@
 		width: 100%;
 		padding: 0 0 2rem 0;
 	}
+	.base {
+		padding-top: 3.5rem;
+		padding-bottom: 3.5rem;
+	}
+	.align-c {
+		text-align: left;
+	}
+	.hide-900 {
+		display: none;
+	}
 	.display-ls {
 		flex-direction: column;
 	}
@@ -214,7 +214,7 @@
 	.color {
 		margin-top: 30px;
 		width: 70vw;
-		height: 50vw;
+		height: 60vw;
 	}
 }
 
@@ -227,10 +227,6 @@
 	}
 	.display-li+.display-li {
 		margin-top: 3rem;
-	}
-	.color {
-		width: 90vw;
-		height: 90vw;
 	}
 	.color-desc {
 		font-size: 14px;
@@ -310,6 +306,10 @@
 	.blog-li {
 		height: 41vw;
 		width: 41vw;
+	}
+	.color {
+		width: 90vw;
+		height: 90vw;
 	}
 }
 
