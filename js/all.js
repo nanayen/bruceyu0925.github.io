@@ -39,6 +39,12 @@ function doScroll(e) {
     }
 }
 
+// 鎖滑動
+function Window_Lock(status){
+    document.documentElement.style.overflow = status;
+    document.body.style.overflow = status;
+}
+
 // 讀取畫面
 $(window).load(function () {
     $("#Loading").delay(2300).fadeOut(300);

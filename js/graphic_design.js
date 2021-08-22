@@ -58,9 +58,7 @@ $('.blog-li').click(function () {
     var getSrc = $(this).find('.img-resp').attr('src');
     $('.blog-bigimg').attr('src', getSrc);
     Bigpic_Btn();
-
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
+    Window_Lock('hidden');
 })
 
 $('.prev').click(function(){
@@ -87,8 +85,7 @@ $('.next').click(function(){
 
 $('.blog-close').click(function(){
     $('.blog-big').removeClass('--show');
-    document.documentElement.style.overflow = 'auto';
-    document.body.style.overflow = 'auto';
+    Window_Lock('auto');
 })
 
 // PS前後比較功能

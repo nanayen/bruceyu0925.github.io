@@ -1,17 +1,19 @@
 // 建立調色盤
-var MajorColor = $('#Dis-Major').css('background-color');
+var Style = getComputedStyle(document.documentElement);
+var MajorColor = Style.getPropertyValue('--major');
+console.log(MajorColor)
 var MajorPicker = new iro.ColorPicker('#Picker-Major', {
     width: 140,
     color: MajorColor
 });
 
-var MinorColor = $('#Dis-Minor').css('background-color');
+var MinorColor = Style.getPropertyValue('--minor');
 var MinorPicker = new iro.ColorPicker('#Picker-Minor', {
     width: 140,
     color: MinorColor
 });
 
-var TitleColor = $('#Dis-Title').css('background-color');
+var TitleColor = Style.getPropertyValue('--title');
 var TitlePicker = new iro.ColorPicker('#Picker-Title', {
     width: 140,
     color: TitleColor
@@ -140,4 +142,35 @@ $('#Reset-Title').click(function () {
     document.documentElement.style.setProperty('--title', "#1C6392");
     $(this).parent().find('.color-text').text("#1C6392");
     TitlePicker.color.hexString = "#1C6392";
+})
+
+// 寫Cookie
+function SetCookie(){
+    var Style = getComputedStyle(document.documentElement);
+    var Major = Style.getPropertyValue('--major');
+    var Minor = Style.getPropertyValue('--minor');
+    var Title = Style.getPropertyValue('--title');
+
+    document.cookie = 'Major=' + Major;
+    document.cookie = 'Minor=' + Minor;
+    document.cookie = 'Title=' + Title;
+}
+$('.color-save').click(function () {
+    if(document.cookie != ''){
+        SetCookie();
+        alert('已儲存')
+    }else{
+        $('.alert').addClass('--show');
+        Window_Lock('hidden');
+    }
+})
+$('#Cancel').click(function(){
+    $('.alert').removeClass('--show');
+    Window_Lock('auto');
+})
+$('#Apply').click(function(){
+    SetCookie();
+    $('.alert').removeClass('--show');
+    alert('已儲存');
+    Window_Lock('auto');
 })
