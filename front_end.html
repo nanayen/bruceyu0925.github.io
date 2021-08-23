@@ -73,15 +73,40 @@
 
     <!-- 頁首 -->
 
-    <div class="alert">
-        <div class="alert-head">
-            <span class="alert-desc">
-                同意發送Cookie至您的裝置，來保存此次的設定嗎？
-            </span>
+    <div class="msg" id="Alert">
+        <div class="msg-box">
+            <div class="msg-block msg-head">
+                <span class="msg-title">
+                    注意
+                </span>
+            </div>
+            <div class="msg-block msg-body">
+                <span class="msg-desc">
+                    同意發送Cookie至您的裝置，來保存此次的設定嗎？
+                </span>
+            </div>
+            <div class="msg-block msg-foot">
+                <button id="Cancel" class="msg-btn msg-btn-empty">不同意</button>
+                <button id="Apply" class="msg-btn msg-btn-solid">同　意</button>
+            </div>
         </div>
-        <div class="alert-body">
-            <button id="Cancel" class="alert-btn">不同意</button>
-            <button id="Apply" class="alert-btn">同　意</button>
+    </div>
+
+    <div class="msg" id="Success">
+        <div class="msg-box">
+            <div class="msg-block msg-head">
+                <span class="msg-title">
+                    成功
+                </span>
+            </div>
+            <div class="msg-block msg-body">
+                <span class="msg-desc">
+                    已儲存此次設定。
+                </span>
+            </div>
+            <div class="msg-block msg-foot">
+                <button id="Okay" class="msg-btn msg-btn-solid">確　定</button>
+            </div>
         </div>
     </div>
 
