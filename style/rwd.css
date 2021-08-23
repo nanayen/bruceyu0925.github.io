@@ -277,6 +277,9 @@
 	.banr-pag-sm {
 		font-size: 4.5vw;
 	}
+	.msg-box{
+		width: 90%;
+	}
 	.base-link-ls {
 		flex-direction: column;
 		text-align: center;

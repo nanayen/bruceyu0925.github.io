@@ -90,7 +90,7 @@ a {
 	left: 0;
 	top: 0;
 	background-color: #ddd;
-	z-index: 6
+	z-index: 6;
 }
 
 .logo-box {
@@ -381,6 +381,114 @@ a {
 .banr-pag-sm {
 	font-size: 2.5vw;
 	color: var(--minor);
+}
+
+/* Msg --------------------------------- */
+.msg{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	opacity: 0;
+	pointer-events: none;
+	left: 0;
+	top: 0;
+	z-index: 6;
+	background-color: rgba(0, 0, 0, .5);
+	transition-duration: 200ms;
+	transform: scale(110%);
+	-webkit-transform: scale(110%);
+	-moz-transform: scale(110%);
+	-ms-transform: scale(110%);
+	-o-transform: scale(110%);
+}
+.msg.--show{
+	opacity: 1;
+	pointer-events: all;
+	transform: scale(100%);
+	-webkit-transform: scale(100%);
+	-moz-transform: scale(100%);
+	-ms-transform: scale(100%);
+	-o-transform: scale(100%);
+}
+.msg-box{
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	width: 450px;
+	border: 5px solid #fff;
+}
+.msg-block{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.msg-head{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #ddd;
+}
+.msg-body{
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #eee;
+}
+.msg-foot{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #ddd;
+}
+.msg-title{
+	font-size: 30px;
+	color: var(--title);
+}
+.msg-desc{
+	color: #555;
+	font-size: 18px;
+	line-height: 1.5;
+	text-align: center;	
+}
+.msg-btn{
+	outline: none;
+	cursor: pointer;
+	border: 2px solid var(--major);
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	padding: 5px 12px;
+	font-size: 18px;
+	opacity: .8;
+	transition-duration: 200ms;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+}
+.msg-btn:hover{
+	opacity: .9;
+}
+.msg-btn+.msg-btn{
+	margin-left: 30px;
+}
+.msg-btn-solid{
+	background-color: var(--major);
+	color: #ddd;
+}
+.msg-btn-empty{
+	background-color: transparent;
+	color: var(--major);
+}
+.msg-btn-empty:hover{
+	background-color: var(--major);
+	color: #ddd;
 }
 
 /* Base --------------------------------- */
