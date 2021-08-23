@@ -1,7 +1,6 @@
 // 建立調色盤
 var Style = getComputedStyle(document.documentElement);
 var MajorColor = Style.getPropertyValue('--major');
-console.log(MajorColor)
 var MajorPicker = new iro.ColorPicker('#Picker-Major', {
     width: 140,
     color: MajorColor
@@ -158,19 +157,22 @@ function SetCookie(){
 $('.color-save').click(function () {
     if(document.cookie != ''){
         SetCookie();
-        alert('已儲存')
+        $('#Success').addClass('--show');
     }else{
-        $('.alert').addClass('--show');
+        $('#Alert').addClass('--show');
         Window_Lock('hidden');
     }
 })
 $('#Cancel').click(function(){
-    $('.alert').removeClass('--show');
+    $('#Alert').removeClass('--show');
     Window_Lock('auto');
 })
 $('#Apply').click(function(){
     SetCookie();
-    $('.alert').removeClass('--show');
-    alert('已儲存');
+    $('#Alert').removeClass('--show');
+    $('#Success').addClass('--show');
+})
+$('#Okay').click(function(){
+    $('#Success').removeClass('--show');
     Window_Lock('auto');
 })
