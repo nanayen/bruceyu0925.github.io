@@ -1,3 +1,14 @@
+Window_Lock('hidden')
+
+$(window).load(function () {
+    $(this).delay(2300).queue(function(){
+    $("#Loading").addClass('--hide');
+    $('.banr-home-text').addClass('--show');
+    $('.banr-pag-title').addClass('--show');
+    Window_Lock('auto');
+    })
+})
+
 // 輪播功能
 setInterval(function () {
     var getpic_src = $('.js-fadeIn-right--active').siblings().find('.switcher-img-cover').attr('src');    
