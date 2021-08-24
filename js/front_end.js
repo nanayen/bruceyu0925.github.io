@@ -20,8 +20,7 @@ var TitlePicker = new iro.ColorPicker('#Picker-Title', {
 
 // 切換類別
 $('.color-li').click(function () {
-    $('.color-li.--click').removeClass('--click');
-    $(this).addClass('--click');
+    $(this).addClass('--click').siblings().removeClass('--click');
 
     var Dis = '#Dis-' + $(this).attr('id');
     $('.color-dis.--click').removeClass('--click');
@@ -32,7 +31,7 @@ $('.color-li').click(function () {
 
 // 開啟調色盤
 $('.color-picker-btn').click(function () {
-    $(this).parent().find('.color-picker-border').toggleClass('--click')
+    $(this).siblings().find('.color-picker-border').toggleClass('--click')
 })
 
 // 關閉調色盤
@@ -41,41 +40,41 @@ $('.color-text').click(function () {
 })
 
 // 使用鍵入
-$('#Dis-Major').find('.color-text').blur(function () {
+$('#Dis-Major .color-text').blur(function () {
     var Color = $(this).val();
     try {
-        document.documentElement.style.setProperty('--major', Color);
+        $(document).prop('--major', Color);
         MajorPicker.color.hexString = Color;
     } catch {
         Color = MajorPicker.color.hexString;
         $(this).val(Color);
-        document.documentElement.style.setProperty('--major', Color);
+        $(document).prop('--major', Color);
         MajorPicker.color.hexString = Color;
     }
 })
 
-$('#Dis-Minor').find('.color-text').blur(function () {
+$('#Dis-Minor .color-text').blur(function () {
     var Color = $(this).val();
     try {
-        document.documentElement.style.setProperty('--minor', Color);
+        $(document).prop('--minor', Color);
         MinorPicker.color.hexString = Color;
     } catch {
         Color = MinorPicker.color.hexString;
         $(this).val(Color);
-        document.documentElement.style.setProperty('--minor', Color);
+        $(document).prop('--minor', Color);
         MinorPicker.color.hexString = Color;
     }
 })
 
-$('#Dis-Title').find('.color-text').blur(function () {
+$('#Dis-Title .color-text').blur(function () {
     var Color = $(this).val();
     try {
-        document.documentElement.style.setProperty('--title', Color);
+        $(document).prop('--title', Color);
         TitlePicker.color.hexString = Color;
     } catch {
         Color = TitlePicker.color.hexString;
         $(this).val(Color);
-        document.documentElement.style.setProperty('--title', Color);
+        $(document).prop('--title', Color);
         TitlePicker.color.hexString = Color;
     }
 })
@@ -89,7 +88,7 @@ $('.color-text').keydown(function () {
 // 使用調色盤
 MajorPicker.on(['color:init', 'color:change'], function () {
     var Major = MajorPicker.color.hexString;
-    $('#Dis-Major').find('.color-text').val(Major);
+    $('#Dis-Major .color-text').val(Major);
     document.documentElement.style.setProperty('--major', Major);
 
     var MajorVal = MajorPicker.color.value;
@@ -102,7 +101,7 @@ MajorPicker.on(['color:init', 'color:change'], function () {
 
 MinorPicker.on(['color:init', 'color:change'], function () {
     var Minor = MinorPicker.color.hexString;
-    $('#Dis-Minor').find('.color-text').val(Minor);
+    $('#Dis-Minor .color-text').val(Minor);
     document.documentElement.style.setProperty('--minor', Minor);
 
     var MinorVal = MinorPicker.color.value;
@@ -115,7 +114,7 @@ MinorPicker.on(['color:init', 'color:change'], function () {
 
 TitlePicker.on(['color:init', 'color:change'], function () {
     var Title = TitlePicker.color.hexString;
-    $('#Dis-Title').find('.color-text').val(Title);
+    $('#Dis-Title .color-text').val(Title);
     document.documentElement.style.setProperty('--title', Title);
 
     var TitleVal = TitlePicker.color.value;
@@ -128,18 +127,18 @@ TitlePicker.on(['color:init', 'color:change'], function () {
 
 // 顏色重設
 $('#Reset-Major').click(function () {
-    document.documentElement.style.setProperty('--major', "#4398D9");
-    $(this).parent().find('.color-text').text("#4398D9");
+    $(document).prop('--major', "#4398D9");
+    $(this).siblings('.color-text').text("#4398D9");
     MajorPicker.color.hexString = "#4398D9";
 })
 $('#Reset-Minor').click(function () {
-    document.documentElement.style.setProperty('--minor', "#2EC0FF");
-    $(this).parent().find('.color-text').text("#2EC0FF");
+    $(document).prop('--minor', "#2EC0FF");
+    $(this).siblings('.color-text').text("#2EC0FF");
     MinorPicker.color.hexString = "#2EC0FF";
 })
 $('#Reset-Title').click(function () {
-    document.documentElement.style.setProperty('--title', "#1C6392");
-    $(this).parent().find('.color-text').text("#1C6392");
+    $(document).prop('--title', "#1C6392");
+    $(this).siblings('.color-text').text("#1C6392");
     TitlePicker.color.hexString = "#1C6392";
 })
 
@@ -149,15 +148,16 @@ function SetCookie(){
     var Major = Style.getPropertyValue('--major');
     var Minor = Style.getPropertyValue('--minor');
     var Title = Style.getPropertyValue('--title');
-
-    document.cookie = 'Major=' + Major;
-    document.cookie = 'Minor=' + Minor;
-    document.cookie = 'Title=' + Title;
+    var Time = 'Fri, 31 Dec 9999 23:59:59 GMT'
+    document.cookie = 'Major=' + Major +';expires=' + Time ;
+    document.cookie = 'Minor=' + Minor +';expires=' + Time ;
+    document.cookie = 'Title=' + Title +';expires=' + Time ;
 }
 $('.color-save').click(function () {
     if(document.cookie != ''){
         SetCookie();
         $('#Success').addClass('--show');
+        Window_Lock('hidden');
     }else{
         $('#Alert').addClass('--show');
         Window_Lock('hidden');

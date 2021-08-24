@@ -6,13 +6,13 @@ setInterval(function () {
         getpic_num = 0;
     }
 
-    var Img = $('.switcher-img-run').find('.switcher-img-li');
-    var Btn = $('.switcher-btn-run').find('.switcher-btn-li');
+    var Img = $('.switcher-img-run .switcher-img-li');
+    var Btn = $('.switcher-btn-run .switcher-btn-li');
 
     Img.removeClass('switcher-img-cover');
     Img.eq(getpic_num).addClass('switcher-img-cover');
 
-    $('.switcher-btn-run').find('.switcher-btn-click').removeClass('switcher-btn-click');
+    $('.switcher-btn-run .switcher-btn-click').removeClass('switcher-btn-click');
     Btn.eq(getpic_num).addClass('switcher-btn-click');
 }, 3000)
 
@@ -91,5 +91,5 @@ $('.blog-close').click(function(){
 // PS前後比較功能
 $('.toggle-border').mousedown(function () {
     $(this).find('.toggle-btn').stop(true, true).toggleClass('toggle-move');
-    $(this).parent().find('.dis-before').stop(true, true).fadeToggle(300);
+    $(this).siblings().find('.dis-before').stop(true, true).fadeToggle(300);
 })
