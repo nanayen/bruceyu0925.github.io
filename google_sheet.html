@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="zh-Hant-TW" class="window">
 
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,7 @@
     <meta name="Distribution" content="Taiwan">
     <meta name="author" content="BRUCE YU">
     <meta name="copyright" content="Copyright 2021 ©Bruce Yu Design 版權所有">
+    <meta name="google" content="notranslate">
 
     <meta property="og:title" content="Google表單・BRUCE YU DESIGN">
     <meta property="og:description" content="擅長Google表單的動態陣列函數應用，知悉數據與圖表的搭配、呈現，也擅長做出多種類型報表">
@@ -29,7 +30,7 @@
     <title>Bruce Yu Design</title>
 </head>
 
-<body id="Top">
+<body id="Top" class="window">
 
     <!-- Loading -->
     <div id="Loading">
@@ -229,6 +230,19 @@
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script src="/js/jquery-ajex-1.6.4.js"></script>
     <script src="/js/all.js"></script>
+
+    <script>
+        $('.window').addClass('--lock');
+
+        $(window).load(function () {
+            $(this).delay(2300).queue(function () {
+                $("#Loading").addClass('--hide');
+                $('.banr-home-text').addClass('--show');
+                $('.banr-pag-title').addClass('--show');
+                $('.window').removeClass('--lock');
+            })
+        })
+    </script>
 
 </body>
 

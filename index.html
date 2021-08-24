@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="zh-Hant-TW" class="window --lock">
 
 <head>
     <meta charset="UTF-8">
@@ -29,7 +29,7 @@
     <title>Bruce Yu Design</title>
 </head>
 
-<body id="Top">
+<body id="Top" class="window --lock">
 
     <!-- Loading -->
     <div id="Loading">
@@ -145,8 +145,6 @@
     <script src="/js/all.js"></script>
 
     <script>
-        Window_Lock('hidden');
-
         $(window).load(function () {
             $(this).delay(2300).queue(function () {
                 $("#Loading").addClass('--hide');
