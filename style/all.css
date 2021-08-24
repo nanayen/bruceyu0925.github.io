@@ -341,6 +341,7 @@ a {
 	-ms-transform: translateX(-7vw) translateY(0);
 	-o-transform: translateX(-7vw) translateY(0);
 	transition-duration: 1.5s;
+	transition-delay: 400ms;
 	opacity: 0;
 }
 
@@ -375,6 +376,7 @@ a {
 	-ms-transform: translateY(-7vh);
 	-o-transform: translateY(-7vh);
 	transition-duration: 1.5s;
+	transition-delay: 400ms;
 	opacity: 0;
 }
 
