@@ -1,11 +1,11 @@
-Window_Lock('hidden')
+$('.window').addClass('--lock');
 
 $(window).load(function () {
     $(this).delay(2300).queue(function(){
     $("#Loading").addClass('--hide');
     $('.banr-home-text').addClass('--show');
     $('.banr-pag-title').addClass('--show');
-    Window_Lock('auto');
+    $('.window').removeClass('--lock');
     })
 })
 
@@ -168,22 +168,22 @@ $('.color-save').click(function () {
     if(document.cookie != ''){
         SetCookie();
         $('#Success').addClass('--show');
-        Window_Lock('hidden');
+        $('.window').addClass('--lock');
     }else{
         $('#Alert').addClass('--show');
-        Window_Lock('hidden');
+        $('.window').addClass('--lock');
     }
 })
 $('#Cancel').click(function(){
     $('#Alert').removeClass('--show');
-    Window_Lock('auto');
+    $('.window').removeClass('--lock');
 })
 $('#Apply').click(function(){
     SetCookie();
     $('#Alert').removeClass('--show');
-    $('#Success').addClass('--show');
+    $('.window').addClass('--lock');
 })
 $('#Okay').click(function(){
     $('#Success').removeClass('--show');
-    Window_Lock('auto');
+    $('.window').removeClass('--lock');
 })

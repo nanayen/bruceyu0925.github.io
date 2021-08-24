@@ -1,11 +1,11 @@
-Window_Lock('hidden')
+$('.window').addClass('--lock');
 
 $(window).load(function () {
     $(this).delay(2300).queue(function(){
     $("#Loading").addClass('--hide');
     $('.banr-home-text').addClass('--show');
     $('.banr-pag-title').addClass('--show');
-    Window_Lock('auto');
+    $('.window').removeClass('--lock');
     })
 })
 
@@ -69,7 +69,7 @@ function Bigpic_Btn(){
 // Blog圖片放大
 $('.blog-li').click(function () {
     Bigpic_Btn();
-    Window_Lock('hidden');
+    $('.window').addClass('--lock');
     $('.blog-big').addClass('--show');
     var getSrc = $(this).find('.img-resp').attr('src');
     $('.blog-bigimg').attr('src', getSrc);
@@ -99,7 +99,7 @@ $('.next').click(function(){
 
 $('.blog-close').click(function(){
     $('.blog-big').removeClass('--show');
-    Window_Lock('auto');
+    $('.window').removeClass('--lock');
 })
 
 // PS前後比較功能

@@ -35,12 +35,6 @@ function doScroll(e) {
     }
 }
 
-// 鎖滑動
-function Window_Lock(status){
-    document.documentElement.style.overflow = status;
-    document.body.style.overflow = status;
-}
-
 // 手機版List清單
 $('#List').click(function () {
     $(this).stop(true, true).toggleClass('open');
