@@ -56,6 +56,10 @@ a {
 
 /* Helper --------------------------------- */
 
+.window.--lock{
+	overflow: hidden!important;
+}
+
 .container {
 	width: 80vw;
 }
@@ -345,7 +349,6 @@ a {
 	-ms-transform: translateX(-7vw) translateY(0);
 	-o-transform: translateX(-7vw) translateY(0);
 	transition-duration: 1.5s;
-	transition-delay: 400ms;
 	opacity: 0;
 }
 
@@ -355,6 +358,7 @@ a {
 	-moz-transform: translateX(0) translateY(0);
 	-ms-transform: translateX(0) translateY(0);
 	-o-transform: translateX(0) translateY(0);
+	transition-delay: 400ms;
 	opacity: 1;
 }
 
