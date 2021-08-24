@@ -57,12 +57,11 @@ function Bigpic_Btn(){
 
 // Blog圖片放大
 $('.blog-li').click(function () {
-    $('.blog-big').addClass('--show');
-
-    var getSrc = $(this).find('.img-resp').attr('src');
-    $('.blog-bigimg').attr('src', getSrc);
     Bigpic_Btn();
     Window_Lock('hidden');
+    $('.blog-big').addClass('--show');
+    var getSrc = $(this).find('.img-resp').attr('src');
+    $('.blog-bigimg').attr('src', getSrc);
 })
 
 $('.prev').click(function(){
