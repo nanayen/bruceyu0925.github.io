@@ -53,7 +53,7 @@ $('.switcher-btn-li').mousedown(function () {
 
 // Blog圖片放大，鎖左右切換函數
 function Bigpic_Btn(){
-    var num_total = $('.blog-li').length;
+    var num_total = parseInt($('.blog-li').length);
     var num_this = parseInt($('.blog-bigimg').attr('src').substr(-7,3));
     if(num_this == num_total){
         $('.prev').addClass('--lock');
@@ -68,11 +68,11 @@ function Bigpic_Btn(){
 
 // Blog圖片放大
 $('.blog-li').click(function () {
-    Bigpic_Btn();
     $('.window').addClass('--lock');
     $('.blog-big').addClass('--show');
     var getSrc = $(this).find('.img-resp').attr('src');
     $('.blog-bigimg').attr('src', getSrc);
+    Bigpic_Btn();
 })
 
 $('.prev').click(function(){
@@ -100,6 +100,7 @@ $('.next').click(function(){
 $('.blog-close').click(function(){
     $('.blog-big').removeClass('--show');
     $('.window').removeClass('--lock');
+    $('.blog-bigimg').attr('src','');
 })
 
 // PS前後比較功能
