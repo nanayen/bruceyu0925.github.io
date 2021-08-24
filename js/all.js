@@ -47,9 +47,11 @@ function Window_Lock(status){
 
 // 讀取畫面
 $(window).load(function () {
-    $("#Loading").delay(2300).fadeOut(300);
+    $(this).delay(2300).queue(function(){
+    $("#Loading").addClass('--hide');
     $('.banr-home-text').addClass('--show');
     $('.banr-pag-title').addClass('--show');
+    })
 })
 
 // 手機版List清單
