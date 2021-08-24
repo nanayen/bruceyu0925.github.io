@@ -181,7 +181,7 @@ $('#Cancel').click(function(){
 $('#Apply').click(function(){
     SetCookie();
     $('#Alert').removeClass('--show');
-    $('.window').addClass('--lock');
+    $('#Success').addClass('--show');
 })
 $('#Okay').click(function(){
     $('#Success').removeClass('--show');
