@@ -52,11 +52,6 @@ $(window).load(function () {
     })
 })
 
-.queue(function(next){
-    $(this).removeClass("error");
-    next();
-})
-
 // 手機版List清單
 $('#List').click(function () {
     $(this).stop(true, true).toggleClass('open');
