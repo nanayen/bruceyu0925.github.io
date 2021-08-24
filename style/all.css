@@ -91,12 +91,12 @@ a {
 	top: 0;
 	background-color: #ddd;
 	z-index: 6;
-	transition-duration: 300ms;
 }
 
 #Loading.--hide{
 	pointer-events: none;
 	opacity: 0;
+	transition-duration: 300ms;
 	transform: scale(110%);
 	-webkit-transform: scale(110%);
 	-moz-transform: scale(110%);
