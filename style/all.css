@@ -91,6 +91,17 @@ a {
 	top: 0;
 	background-color: #ddd;
 	z-index: 6;
+	transition-duration: 300ms;
+}
+
+#Loading.--hide{
+	pointer-events: none;
+	opacity: 0;
+	transform: scale(110%);
+	-webkit-transform: scale(110%);
+	-moz-transform: scale(110%);
+	-ms-transform: scale(110%);
+	-o-transform: scale(110%);
 }
 
 .logo-box {
@@ -330,7 +341,6 @@ a {
 	-ms-transform: translateX(-7vw) translateY(0);
 	-o-transform: translateX(-7vw) translateY(0);
 	transition-duration: 1.5s;
-	transition-delay: 2.6s;
 	opacity: 0;
 }
 
@@ -365,7 +375,6 @@ a {
 	-ms-transform: translateY(-7vh);
 	-o-transform: translateY(-7vh);
 	transition-duration: 1.5s;
-	transition-delay: 2.6s;
 	opacity: 0;
 }
 
