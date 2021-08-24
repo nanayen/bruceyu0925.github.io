@@ -11,6 +11,7 @@
     <meta name="Distribution" content="Taiwan">
     <meta name="author" content="BRUCE YU">
     <meta name="copyright" content="Copyright 2021 ©Bruce Yu Design 版權所有">
+    <meta name="google" content="notranslate">
 
     <meta property="og:title" content="BRUCE YU DESIGN">
     <meta property="og:description" content="BRUCE YU DESIGN，擅長平面設計、前端設計與Google表單">
@@ -145,6 +146,14 @@
 
     <script>
         Window_Lock('hidden');
+
+        $(window).load(function () {
+            $(this).delay(2300).queue(function () {
+                $("#Loading").addClass('--hide');
+                $('.banr-home-text').addClass('--show');
+                $('.banr-pag-title').addClass('--show');
+            })
+        })
     </script>
 
 </body>
