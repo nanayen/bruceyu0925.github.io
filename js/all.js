@@ -7,10 +7,6 @@ function setEvent() {
     window.onscroll = doScroll;
 }
 
-function width() {
-    document.body.clientWidth;
-}
-
 function doScroll(e) {
 
     var dY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
@@ -45,13 +41,20 @@ function Window_Lock(status){
     $(document.body).css('overflow',status);
 }
 
+Window_Lock('hidden')
 // 讀取畫面
 $(window).load(function () {
     $(this).delay(2300).queue(function(){
     $("#Loading").addClass('--hide');
     $('.banr-home-text').addClass('--show');
     $('.banr-pag-title').addClass('--show');
+    Window_Lock('auto');
     })
+})
+
+.queue(function(next){
+    $(this).removeClass("error");
+    next();
 })
 
 // 手機版List清單

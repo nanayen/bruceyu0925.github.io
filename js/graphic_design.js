@@ -1,10 +1,14 @@
 // 輪播功能
 setInterval(function () {
-    var getpic_src = $('.switcher-img-cover').attr('src');
-    var getpic_num = getpic_src.substr(30, 1)
+    var getpic_src = $('.js-fadeIn-right--active').siblings().find('.switcher-img-cover').attr('src');    
+    var getpic_num = "";
+    try{
+        getpic_num = getpic_src.substr(30, 1);
+    }catch{};
+
     if (getpic_num > $('.switcher-img-li').length - 1) {
         getpic_num = 0;
-    }
+    };
 
     var Img = $('.switcher-img-run .switcher-img-li');
     var Btn = $('.switcher-btn-run .switcher-btn-li');
@@ -91,5 +95,5 @@ $('.blog-close').click(function(){
 // PS前後比較功能
 $('.toggle-border').mousedown(function () {
     $(this).find('.toggle-btn').stop(true, true).toggleClass('toggle-move');
-    $(this).siblings().find('.dis-before').stop(true, true).fadeToggle(300);
+    $(this).siblings().find('.dis-before').stop(true, true).toggleClass('--show');
 })
