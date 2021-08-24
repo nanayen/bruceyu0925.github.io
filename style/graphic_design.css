@@ -216,13 +216,23 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, .8);
-	transition-duration: 300ms;
+	transition-duration: 200ms;
+	transform: scale(110%);
+	-webkit-transform: scale(110%);
+	-moz-transform: scale(110%);
+	-ms-transform: scale(110%);
+	-o-transform: scale(110%);
 }
 
 .blog-big.--show{
 	pointer-events: all;
 	display: flex;
 	opacity: 1;
+	transform: scale(100%);
+	-webkit-transform: scale(100%);
+	-moz-transform: scale(100%);
+	-ms-transform: scale(100%);
+	-o-transform: scale(100%);
 }
 
 .blog-bigbox {
