@@ -37,8 +37,8 @@ function doScroll(e) {
 
 // 鎖滑動
 function Window_Lock(status){
-    $(document.documentElement).css('overflow',status);
-    $(document.body).css('overflow',status);
+    document.documentElement.style.overflow = status;
+    document.body.style.overflow = status;
 }
 
 Window_Lock('hidden')
