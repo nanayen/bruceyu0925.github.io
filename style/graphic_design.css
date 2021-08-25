@@ -226,7 +226,6 @@
 
 .blog-big.--show{
 	pointer-events: all;
-	display: flex;
 	opacity: 1;
 	transform: scale(100%);
 	-webkit-transform: scale(100%);
@@ -390,45 +389,4 @@
 
 .blog-li:hover .blog-cover {
 	opacity: 1;
-}
-
-/* RWD --------------------------------- */
-
-@media screen and (min-width: 1601px) {
-	.blog-ls {
-		width: 69vw;
-	}
-	.blog-li {
-		height: 19vw;
-		width: 19vw;
-	}
-	.display-li {
-		width: 21vw;
-	}
-}
-
-@media screen and (max-width: 1200px) {
-	.blog-ls {
-		width: 78vw;
-	}
-	.blog-li {
-		height: 22vw;
-		width: 22vw;
-	}
-}
-
-@media screen and (max-width: 1024px) {
-	.display-li {
-		width: 27vw;
-	}
-	.blog-cover {
-		display: none;
-	}
-	.blog-ls {
-		width: 90vw;
-	}
-	.blog-li {
-		height: 26vw;
-		width: 26vw;
-	}
 }
