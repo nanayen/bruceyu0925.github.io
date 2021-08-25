@@ -4,6 +4,16 @@
 	.container {
 		width: 70vw;
 	}
+	.blog-ls {
+		width: 69vw;
+	}
+	.blog-li {
+		height: 19vw;
+		width: 19vw;
+	}
+	.display-li {
+		width: 21vw;
+	}
 }
 
 @media screen and (max-width: 1200px) {
@@ -13,6 +23,13 @@
 	.banr-home-text {
 		line-height: 12vh;
 		font-size: 8vh;
+	}
+	.blog-ls {
+		width: 78vw;
+	}
+	.blog-li {
+		height: 22vw;
+		width: 22vw;
 	}
 }
 
@@ -51,6 +68,19 @@
 	.btn-top {
 		right: 5vw;
 		bottom: 90px;
+	}
+	.display-li {
+		width: 27vw;
+	}
+	.blog-cover {
+		display: none;
+	}
+	.blog-ls {
+		width: 90vw;
+	}
+	.blog-li {
+		height: 26vw;
+		width: 26vw;
 	}
 }
 
@@ -309,6 +339,7 @@
 	.blog-li {
 		height: 41vw;
 		width: 41vw;
+		box-shadow: 0 0 15px rgba(0, 0, 0, .15);
 	}
 	.color {
 		width: 90vw;
