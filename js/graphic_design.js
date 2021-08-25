@@ -14,7 +14,7 @@ setInterval(function () {
     var getpic_src = $('.js-fadeIn-right--active').siblings().find('.switcher-img-cover').attr('src');    
     var getpic_num = "";
     try{
-        getpic_num = getpic_src.substr(30, 1);
+        getpic_num = getpic_src.substr(-5, 1);
     }catch{};
 
     if (getpic_num > $('.switcher-img-li').length - 1) {
