@@ -12,6 +12,8 @@
     src: url(/yenyen/font/AkayaTelivigala-Regular.ttf);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300&display=swap');
+
 .board{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -53,11 +55,13 @@
     position: absolute;
     left: 1293px;
     top: 1132px;
-    font-family: "number", "serif-light";
+    font-family: "number",'Noto Serif TC', serif;
     width: 414px;
     height: 736px;
     background: linear-gradient(to right, #d194be 0%, #fcd5ce 100%);
     padding: 5px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .date-title {
@@ -327,6 +331,7 @@ input[type="range"]::-webkit-slider-thumb{
 
 #Setdate {
     color: var(--major);
+    height: 40px;
 }
 
 #Textbox {
@@ -459,5 +464,3 @@ input[type="color"]::-webkit-color-swatch {
     border: 2px solid var(--minor);
     color: var(--minor);
 }
-
-/* RWD */
