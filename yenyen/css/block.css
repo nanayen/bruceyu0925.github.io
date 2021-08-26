@@ -12,8 +12,6 @@
 	src: url(/yenyen/font/AkayaTelivigala-Regular.ttf);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300&display=swap');
-
 .board{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -52,7 +50,7 @@
 /* 手機畫面 */
 
 .phone {
-	font-family: "number",'Noto Serif TC', serif;
+	font-family: "number","serif-light";
 	width: 414px;
 	height: 736px;
 	background-color: #fafafa;
