@@ -100,7 +100,6 @@ $('.next').click(function(){
 $('.blog-close').click(function(){
     $('.blog-big').removeClass('--show');
     $('.window').removeClass('--lock');
-    $('.blog-bigimg').attr('src','');
 })
 
 // PS前後比較功能
