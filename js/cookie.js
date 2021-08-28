@@ -22,4 +22,7 @@ if (document.cookie != '') {
     AttrCss.setProperty('--major', Major);
     AttrCss.setProperty('--minor', Minor);
     AttrCss.setProperty('--title', Title);
+    console.log(document.cookie);
+}else{
+    console.log("no-cookie")
 }

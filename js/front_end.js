@@ -28,6 +28,9 @@ var TitlePicker = new iro.ColorPicker('#Picker-Title', {
     width: 140,
     color: TitleColor
 });
+console.log("Major:"+MajorColor);
+console.log("Minor:"+MinorColor);
+console.log("Title:"+TitleColor);
 
 // 切換類別
 $('.color-li').click(function () {
