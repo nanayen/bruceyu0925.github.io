@@ -90,18 +90,6 @@ $('.boarder-set').on('input', function () {
     $('.cls-1').css('fill', BorCol);
 })
 
-// 畫面大小
-$('#Window-Size').on("input", function () {
-    var Per = $(this).val() + '%';
-    $('.range-text').text(Per);
-    $('.phone').css('transform', 'scale(' + Per + ')')
-});
-
-// 畫面置中
-$('#Move-Center').click(function () {
-    AutoCenter();
-})
-
 // 文字編輯
 $('#Titlebox').keyup(function () {
     var Tx = $(this).val();

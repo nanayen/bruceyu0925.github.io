@@ -35,18 +35,6 @@ $('#Clear-All').click(function () {
     document.body.style.overflow = 'hidden';
 })
 
-// 畫面大小
-$('#Window-Size').on("input", function () {
-    var Per = $(this).val() + '%';
-    $('.range-text').text(Per);
-    $('.phone').css('transform', 'scale(' + Per + ')')
-});
-
-// 畫面置中
-$('#Move-Center').click(function () {
-    AutoCenter();
-})
-
 // 選取工具
 $('#Select-None').click(function () {
     $('.--choose').removeClass('--choose');

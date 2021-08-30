@@ -13,7 +13,10 @@ function AutoCenter() {
     $('.phone-box').scrollLeft((InnerW - OuterW) / 2);
     $('.phone-box').scrollTop((InnerH - OuterH) / 2);
 
-    $('.phone').css('transform', 'scale(100%)');
+    $('.phone').css({
+        'transform': 'scale(100%)',
+        '-webkit-transform': 'scale(100%)'
+    });
     $('#Window-Size').val(100);
     $('.range-text').text('100%');
 }
@@ -23,4 +26,19 @@ AutoCenter();
 
 window.onresize = function () {
     AutoWidth();
-}
+};
+
+// 畫面大小
+$('#Window-Size').on("input", function () {
+    var Per = $(this).val() + '%';
+    $('.range-text').text(Per);
+    $('.phone').css({
+        'transform': 'scale(' + Per + ')',
+        '-webkit-transform': 'scale(' + Per + ')'
+    });
+});
+
+// 畫面置中
+$('#Move-Center').click(function () {
+    AutoCenter();
+})
