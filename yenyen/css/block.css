@@ -1,14 +1,8 @@
 /* 手機畫面 */
 
 .phone {
-	font-family: "number","serif-light";
-	width: 414px;
-	height: 736px;
 	background-color: #fafafa;
 	padding: 10px;
-	position: absolute;
-	left: 1293px;
-    top: 1132px;
 }
 
 .border {

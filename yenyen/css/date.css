@@ -1,16 +1,8 @@
 /* 手機畫面 */
 
 .phone {
-    position: absolute;
-    left: 1293px;
-    top: 1132px;
-	font-family: "number","serif-light";
-    width: 414px;
-    height: 736px;
     background: linear-gradient(to right, #d194be 0%, #fcd5ce 100%);
     padding: 5px;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .date-title {

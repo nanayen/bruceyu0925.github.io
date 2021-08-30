@@ -2,18 +2,7 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: serif-light;
-	src: url(/yenyen/font/NotoSerifCJKtc-Light.otf);
-}
-
-@font-face {
-    font-family: number;
-    src: url(/yenyen/font/AkayaTelivigala-Regular.ttf);
-}
-
 .board{
-    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: row;
     background-color: #eee;
@@ -21,12 +10,22 @@
 }
 
 .set-box {
+    font-family: Arial, Helvetica, sans-serif;
     width: 400px;
     height: 100vh;
     background-color: #ddd;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
     z-index: 2;
     overflow: auto;
+}
+
+.phone {
+	font-family: "Akaya Telivigala" , "Noto Serif TC";
+	width: 414px;
+	height: 736px;
+	position: absolute;
+	left: 1293px;
+    top: 1132px;
 }
 
 .phone-box {
