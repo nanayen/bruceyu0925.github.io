@@ -11,19 +11,19 @@ $(window).load(function () {
 
 // 建立調色盤
 var Style = getComputedStyle(document.documentElement);
-var MajorColor = Style.getPropertyValue('--major');
+var MajorColor = Style.getPropertyValue('--major').replace(' ','');
 var MajorPicker = new iro.ColorPicker('#Picker-Major', {
     width: 140,
     color: MajorColor
 });
 
-var MinorColor = Style.getPropertyValue('--minor');
+var MinorColor = Style.getPropertyValue('--minor').replace(' ','');
 var MinorPicker = new iro.ColorPicker('#Picker-Minor', {
     width: 140,
     color: MinorColor
 });
 
-var TitleColor = Style.getPropertyValue('--title');
+var TitleColor = Style.getPropertyValue('--title').replace(' ','');
 var TitlePicker = new iro.ColorPicker('#Picker-Title', {
     width: 140,
     color: TitleColor
